@@ -12,7 +12,7 @@ import { ArticleViewEntity } from '../../stores/ArticleViewEntity';
 import { Divider } from '../../components/Divider';
 import { ArticlesSection } from './ArticlesSection';
 import AutoHeightWebView from 'react-native-autoheight-webview'
-import { dummyData2 } from "./dummyData2";
+import { dummyData2 } from "../../dummy-data/dummyData2";
 
 export interface ArticleScreenParams {
     article: ArticleViewEntity
