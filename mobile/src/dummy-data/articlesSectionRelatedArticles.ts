@@ -58,36 +58,7 @@ const articlesList1 = [
     },
 ];
 
-export const dummyData: ArticlesSectionData = {
-    title: 'Razvoj dece',
-    
-    featuredArticle: {
-        id: 1,
-        title: 'Detetov razvoj sa 4 meseca: Šta da očekujete?',
-        coverImageUrl: 'https://lh5.googleusercontent.com/proxy/SKqjyz51CmvPZsturrLULQZWilCdYNUaQ0X08mkQ7gRgOe0_a_5XdMAqbEaxCEVuR7mKMjdtFDxlCYYny6sgnTKXyZopk1p2oOVI6KpCVLRshqErEFBb',
-        coverImageLocalPath: '',
-        bodyHTML: `<p>Amet <b>aliquip</b> nisi ex et proident et proident laborum. Occaecat eu sint esse dolore sunt adipisicing ut proident ad. Amet laborum qui consequat sit magna amet ullamco enim ex ut pariatur in nostrud eu. Eu nulla ipsum nostrud reprehenderit tempor eiusmod. Nulla fugiat consequat adipisicing occaecat consectetur aliquip adipisicing ut irure ea. Exercitation in adipisicing duis adipisicing deserunt commodo enim nostrud incididunt irure do deserunt.</p>
-                    <p>Adipisicing exercitation ea tempor Lorem cupidatat ad commodo excepteur dolor. Consequat irure exercitation voluptate deserunt tempor quis in id sunt fugiat magna. Excepteur consequat incididunt duis aliqua eiusmod.</p>
-        `,
-        category: {id:1, name:'Razvojni dogadjaji'},
-        tags: [
-            {id:1, name:'tag1'},
-        ]
-    },
-
+export const articlesSectionRelatedArticles: ArticlesSectionData = {
+    title: 'Povezani članci',
     otherFeaturedArticles: articlesList1,
-
-    categoryArticles: [
-        {
-            categoryId: 2,
-            categoryName: 'Ishrana i dojenje 2',
-            articles: articlesList1
-        },
-
-        {
-            categoryId: 3,
-            categoryName: 'Detetovo zdravlje 2',
-            articles: articlesList1
-        },
-    ],
 };

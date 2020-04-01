@@ -5,7 +5,7 @@ import { ArticleViewEntity } from '../../stores/ArticleViewEntity';
 import { CategoryArticlesViewEntity } from '../../stores/CategoryArticlesViewEntity';
 import { scale, moderateScale } from 'react-native-size-matters';
 import { translate } from '../../translations/translate';
-import { dummyData } from '../../dummy-data/dummyData';
+import { articlesSectionAllData } from '../../dummy-data/articlesSectionAllData';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { CategoryArticlesScreenParams } from './CategoryArticlesScreen';
@@ -37,7 +37,7 @@ export interface ArticlesSectionData {
 export class ArticlesSection extends React.Component<Props, State> {
     static defaultProps: Props = {
         // data: {title:'No articles'},
-        data: dummyData,
+        data: articlesSectionAllData,
         hideTitleUnderline: false,
     };
 

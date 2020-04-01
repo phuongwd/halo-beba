@@ -12,7 +12,7 @@ import { ArticleViewEntity } from '../../stores/ArticleViewEntity';
 import { Divider } from '../../components/Divider';
 import { ArticlesSection } from './ArticlesSection';
 import AutoHeightWebView from 'react-native-autoheight-webview'
-import { dummyData2 } from "../../dummy-data/dummyData2";
+import { articlesSectionRelatedArticles } from "../../dummy-data/articlesSectionRelatedArticles";
 
 export interface ArticleScreenParams {
     article: ArticleViewEntity
@@ -110,7 +110,7 @@ export class ArticleScreen extends React.Component<Props, object> {
                         <Divider style={{marginTop:scale(30), marginBottom:scale(30)}} />
 
                         {/* RELATED ARTICLES */}
-                        <ArticlesSection data={dummyData2} hideTitleUnderline={true} />
+                        <ArticlesSection data={articlesSectionRelatedArticles} hideTitleUnderline={true} />
                     </View>
                 </ScrollView>
             )}
