@@ -58,7 +58,7 @@ export class ArticleScreen extends React.Component<Props, object> {
                 <ScrollView
                     style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
                     contentContainerStyle={ [styles.container] }
-                >   
+                >
                     <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
                         {/* GO BACK */}
                         <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>

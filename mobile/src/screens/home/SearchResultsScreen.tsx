@@ -1,7 +1,11 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle } from 'react-native';
+import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle, ScrollView } from 'react-native';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
+import { translate } from '../../translations/translate';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { Typography, TypographyType } from '../../components/Typography';
+import { TextButton, TextButtonColor } from '../../components/TextButton';
 
 export interface SearchResultsScreenParams {
     searchTerm?: string;
@@ -35,19 +39,29 @@ export class SearchResultsScreen extends React.Component<Props, State> {
         }
     }
 
+    private gotoBack() {
+        this.props.navigation.goBack();
+    }
+
     public render() {
         const screenParams = this.props.navigation.state.params!;
 
         return (
             <ThemeConsumer>
             {(themeContext:ThemeContextValue) => (
-                <SafeAreaView style={ [styles.container, themeContext.theme.contentContainer] }>
-                    <View style={ {backgroundColor:'white', flex:1, flexDirection:'column', justifyContent:'flex-start', alignItems:'stretch'} }>
-                        <Text style={ {fontSize:20, textAlign:'left'} }>
-                            SearchResultsScreen
-                        </Text>
+                <ScrollView
+                    style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
+                    contentContainerStyle={ [styles.container] }
+                >
+                    <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
+                        {/* GO BACK */}
+                        <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
+                            {translate('buttonBack')}
+                        </TextButton>
+
+                        <View style={{height:scale(15)}} />
                     </View>
-                </SafeAreaView>
+                </ScrollView>
             )}
             </ThemeConsumer>
         );

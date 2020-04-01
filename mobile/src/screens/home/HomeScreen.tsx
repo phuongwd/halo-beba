@@ -1,12 +1,12 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, ViewStyle, ScrollView } from 'react-native';
 import { NavigationScreenConfigProps } from 'react-navigation';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { themes } from '../../themes/themes';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { translate } from '../../translations/translate';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { IconButton } from 'react-native-paper';
+import { IconButton, Button } from 'react-native-paper';
 import { ProfileIcon } from "../../components/ProfileIcon";
 import { SearchInput, SearchInputSize } from "../../components/SearchInput";
 import { DrawerActions } from 'react-navigation-drawer';
@@ -49,6 +49,9 @@ export class HomeScreen extends React.Component<Props, object> {
             <ThemeConsumer>
             {(themeContext:ThemeContextValue) => (
                 <ScrollView style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}} contentContainerStyle={ [styles.container, {padding:themeContext.theme.screenContainer?.padding}] }>
+                    <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_SearchResultsScreen')}}>Search results</Button>
+                    <View style={{height:scale(30)}} />
+
                     <ArticlesSection />
                 </ScrollView>
             )}

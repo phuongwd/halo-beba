@@ -23,6 +23,7 @@ import { themes } from "../themes/themes";
 import { translate } from '../translations/translate';
 import { AboutScreen } from "./AboutScreen";
 import { ArticleScreen } from "../screens/home/ArticleScreen";
+import { SearchResultsScreen } from "../screens/home/SearchResultsScreen";
 
 /**
  * Use it to [navigate screens](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
@@ -102,6 +103,12 @@ const HomeStackNavigator = createStackNavigator({
         screen: ArticleScreen,
         navigationOptions: {
             title: "Article"
+        }
+    },
+    HomeStackNavigator_SearchResultsScreen: {
+        screen: SearchResultsScreen,
+        navigationOptions: {
+            title: "Search results"
         }
     },
 }, {
