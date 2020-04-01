@@ -5,7 +5,7 @@ import { ArticleViewEntity } from '../../stores/ArticleViewEntity';
 import { CategoryArticlesViewEntity } from '../../stores/CategoryArticlesViewEntity';
 import { scale, moderateScale } from 'react-native-size-matters';
 import { translate } from '../../translations/translate';
-import { dummyData } from './dummyData';
+import { dummyData } from '../../dummy-data/dummyData';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { CategoryArticlesScreenParams } from './CategoryArticlesScreen';

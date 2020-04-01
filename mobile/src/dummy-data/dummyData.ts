@@ -1,4 +1,4 @@
-import { ArticlesSectionData } from "./ArticlesSection";
+import { ArticlesSectionData } from "../screens/home/ArticlesSection";
 
 const articlesList1 = [
     {
