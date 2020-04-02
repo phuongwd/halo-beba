@@ -8,6 +8,9 @@ import { Surface, List } from "react-native-paper";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import { RectButton } from 'react-native-gesture-handler';
+import { Dimensions } from 'react-native';
+// @ts-ignore
+import HTML from 'react-native-render-html';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 
@@ -131,13 +134,21 @@ export class ListCard extends React.Component<Props, State> {
             items.push((
                 <List.Accordion
                     id={i+1}
+                    key={i+1}
                     title={item.title}
                     titleStyle={styles.item}
                     titleNumberOfLines={3}
                     style={{paddingVertical:scale(2)}}
                 >
-                    <List.Item title="First item" />
-                    <List.Item title="Second item" />
+                    <View style={{paddingHorizontal:scale(15), marginBottom:scale(20)}}>
+                        <HTML
+                            html={ item.bodyHtml }
+                            baseFontStyle={ { fontSize:scale(14) } }
+                            tagsStyles={ {p:{marginBottom:15}, a:{fontWeight:'bold', textDecorationLine:'none'}} }
+                            imagesMaxWidth={ Dimensions.get('window').width }
+                            staticContentMaxWidth={ Dimensions.get('window').width }
+                        />
+                    </View>
                 </List.Accordion>
             ));
         }

@@ -8,7 +8,7 @@ import { ThemeProvider } from '../themes/ThemeContext';
 
 // Warnings to ignore
 YellowBox.ignoreWarnings([
-    // 'Warning: ',
+    'Warning: ',
     'Require cycle',
     'Sending `onAnimatedValueUpdate` with no listeners registered',
     // 'createStackNavigator',
