@@ -2,8 +2,10 @@ import React from 'react';
 import { View, Text, StyleProp, StyleSheet, ViewStyle, TextStyle, ImageStyle, Platform } from 'react-native';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { scale } from 'react-native-size-matters';
+import { translate } from '../../translations/translate';
 import { themes } from "../../themes/themes";
 import { Surface, List, Divider } from "react-native-paper";
+import { Typography } from '../../components/Typography';
 
 export interface Props {
     title?: string;
@@ -21,7 +23,7 @@ export interface State {
 
 export interface ListCardItem {
     id: number;
-    type: string;
+    type: 'article' | 'faq';
     title: string;
     bodyHtml?: string;
 }
@@ -32,7 +34,9 @@ export interface ListCardItem {
  */
 export class ListCard extends React.Component<Props, State> {
     static defaultProps: Props = {
-
+        items: [],
+        number: 5,
+        showAllText: translate('showAllResults'),
     };
 
     constructor(props: Props) {
@@ -53,7 +57,12 @@ export class ListCard extends React.Component<Props, State> {
             <ThemeConsumer>
                 {(themeContext: ThemeContextValue) => (
                     <Surface style={[styles.container, this.props.style]}>
-                        <List.Item
+                        {this.props.title ? (
+                            <Typography>
+                                {this.props.title}
+                            </Typography>
+                        ) : null}
+                        {/* <List.Item
                             title="First Item"
                             right={props => <List.Icon {...props} icon="chevron-right" />}
                             onPress={() => {}}
@@ -67,7 +76,7 @@ export class ListCard extends React.Component<Props, State> {
                             right={props => <List.Icon {...props} icon="chevron-right" />}
                             onPress={() => {}}
                             style={{paddingVertical:3}}
-                        />
+                        /> */}
                     </Surface>
                 )}
             </ThemeConsumer>

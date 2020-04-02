@@ -12,17 +12,6 @@
     "checkEmail": "Proverite svoju Email poštu i kliknite na link u emailu da biste završili registraciju.",
     "sendRegisterEmailAgain": "Nije mi stigao link, pošaljite email ponovo",
 
-    "fieldLabelEmail": "Email",
-    "fieldLabelPassword": "Lozinka",
-    "fieldLabelRepeatPassword": "Ponovite lozinku",
-    "fieldLabelName": "Ime",
-    "fieldLabelSurname": "Prezime",
-
-    "buttonGotoHome": "Nazad na početni ekran",
-    "buttonNext": "Dalje",
-    "buttonBack": "Nazad",
-    "buttonShare": "Podelite članak",
-
     "accountTitle": "Upoznajmo Vaše dete",
     "accountGirl": "Devojčica",
     "accountBoy": "Dečak",
@@ -35,10 +24,6 @@
     "accountSave": "Sačuvajte podatke",
     "accountInviteFather": "Pošaljite SMS poziv tati da koristi aplikaciju",
     "accountInviteMother": "Pošaljite SMS poziv mami da koristi aplikaciju",
-
-    "enterSearchTerm": "Unesite pojam",
-    "showAllArticles": "Svi tekstovi",
-    "relatedArticles": "Povezani članci",
 
     "drawerTitleArticles": "Članci i saveti",
     "drawerTitleGrowthDiary": "Dnevnik razvoja",
@@ -54,5 +39,21 @@
     "drawerButtonParents": "Kutak za roditelje",
     "drawerButtonFaq": "Cesta pitanja",
     "drawerButtonAboutUs": "O nama",
-    "drawerButtonContact": "Kontakt"
+    "drawerButtonContact": "Kontakt",
+
+    "fieldLabelEmail": "Email",
+    "fieldLabelPassword": "Lozinka",
+    "fieldLabelRepeatPassword": "Ponovite lozinku",
+    "fieldLabelName": "Ime",
+    "fieldLabelSurname": "Prezime",
+
+    "buttonGotoHome": "Nazad na početni ekran",
+    "buttonNext": "Dalje",
+    "buttonBack": "Nazad",
+    "buttonShare": "Podelite članak",
+
+    "enterSearchTerm": "Unesite pojam",
+    "showAllArticles": "Svi tekstovi",
+    "relatedArticles": "Povezani članci",
+    "showAllResults": "Prikaži sve rezultate"
 }
