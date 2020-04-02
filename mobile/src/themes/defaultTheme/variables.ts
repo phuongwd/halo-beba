@@ -4,8 +4,8 @@ type ThemeVariables = typeof ThemeStructure.prototype.variables;
 
 export const variables: ThemeVariables = {
     colors: {
-        primary: '#222831',
-        primaryText: '#dadfe1',
+        primary: '#AA40BF',
+        primaryText: 'white',
         secondary: '#29a19c',
         secondaryText: '#fefefe',
 

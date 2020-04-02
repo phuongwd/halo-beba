@@ -55,5 +55,6 @@
     "enterSearchTerm": "Unesite pojam",
     "showAllArticles": "Svi tekstovi",
     "relatedArticles": "Povezani članci",
-    "showAllResults": "Prikaži sve rezultate"
+    "showAllResults": "Prikaži sve rezultate",
+    "showLessResults": "Prikaži manje"
 }

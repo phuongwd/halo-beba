@@ -6,7 +6,8 @@ import { translate } from '../../translations/translate';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
-import { ListCard } from './ListCard';
+import { ListCard, ListCardMode } from './ListCard';
+import { listCardArticleProps } from "../../dummy-data/listCardArticleProps";
 
 export interface SearchResultsScreenParams {
     searchTerm?: string;
@@ -63,7 +64,13 @@ export class SearchResultsScreen extends React.Component<Props, State> {
                         <View style={{height:scale(15)}} />
 
                         {/* LIST CARD */}
-                        <ListCard />
+                        <ListCard
+                            mode={ ListCardMode.accordionList }
+                            title={ listCardArticleProps.title }
+                            subTitle={ listCardArticleProps.subTitle }
+                            items={ listCardArticleProps.items }
+                            onItemPress={(item) => {console.warn(item.id)}}
+                        />
                     </View>
                 </ScrollView>
             )}
