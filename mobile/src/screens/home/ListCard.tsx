@@ -6,11 +6,24 @@ import { themes } from "../../themes/themes";
 import { Surface, List, Divider } from "react-native-paper";
 
 export interface Props {
+    title?: string;
+    subTitle?: string;
+    items?: ListCardItem[];
+    number?: number;
+    showAllText?: string;
     style?: StyleProp<ViewStyle>;
+    onItemPress?: (item:ListCardItem)=>void
 }
 
 export interface State {
 
+}
+
+export interface ListCardItem {
+    id: number;
+    type: string;
+    title: string;
+    bodyHtml?: string;
 }
 
 /**
@@ -47,7 +60,7 @@ export class ListCard extends React.Component<Props, State> {
                             style={{paddingVertical:3}}
                         />
 
-                        <Divider style={{marginHorizontal:scale(15)}} />
+                        <Divider style={{height:0.8, marginHorizontal:scale(15)}} />
 
                         <List.Item
                             title="Second Item"

@@ -80,13 +80,13 @@ export const articlesSectionAllData: ArticlesSectionData = {
     categoryArticles: [
         {
             categoryId: 2,
-            categoryName: 'Ishrana i dojenje 2',
+            categoryName: 'Ishrana i dojenje',
             articles: articlesList1
         },
 
         {
             categoryId: 3,
-            categoryName: 'Detetovo zdravlje 2',
+            categoryName: 'Detetovo zdravlje',
             articles: articlesList1
         },
     ],
