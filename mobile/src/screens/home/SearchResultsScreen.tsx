@@ -65,7 +65,7 @@ export class SearchResultsScreen extends React.Component<Props, State> {
 
                         {/* LIST CARD */}
                         <ListCard
-                            mode={ ListCardMode.accordionList }
+                            mode={ ListCardMode.simpleList }
                             title={ listCardArticleProps.title }
                             subTitle={ listCardArticleProps.subTitle }
                             items={ listCardArticleProps.items }
@@ -86,6 +86,6 @@ export interface SearchResultsScreenStyles {
 
 const styles = StyleSheet.create<SearchResultsScreenStyles>({
     container: {
-        flex: 1,
+        // flex: 1,
     },
 });

@@ -1,5 +1,5 @@
 /**
- * Article entity used by views.
+ * Article entity used by UI components.
  */
 export class ArticleViewEntity {
     id: number = 0;

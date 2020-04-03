@@ -34,8 +34,8 @@ export class Typography extends React.Component<Props, State> {
     private initState() {
         let state: State = {
             fontFamily: 'SFUIDisplay-Regular',
-            fontSize: scale(16),
-            lineHeight: scale(18),
+            fontSize: moderateScale(17),
+            lineHeight: moderateScale(18),
             color: '#262626',
         };
 

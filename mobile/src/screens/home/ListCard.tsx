@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleProp, StyleSheet, ViewStyle, TextStyle, ImageStyle, Platform } from 'react-native';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
-import { scale } from 'react-native-size-matters';
+import { scale, moderateScale } from 'react-native-size-matters';
 import { translate } from '../../translations/translate';
 import { themes } from "../../themes/themes";
 import { Surface, List } from "react-native-paper";
@@ -113,9 +113,9 @@ export class ListCard extends React.Component<Props, State> {
                 <List.Item
                     key={i}
                     title={item.title}
-                    right={props => <List.Icon {...props} color={themeContext.theme.variables?.colors?.primary} icon="chevron-right" />}
+                    right={props => <List.Icon {...props} style={{margin:0}} color={themeContext.theme.variables?.colors?.primary} icon="chevron-right" />}
                     onPress={() => { this.onItemPress(item) }}
-                    style={{ paddingVertical: 3 }}
+                    style={{ paddingVertical: scale(3) }}
                     titleStyle={styles.item}
                     titleNumberOfLines={2}
                 />
@@ -262,8 +262,8 @@ const styles = StyleSheet.create<ListCardStyles>({
 
     item: {
         fontFamily: 'SFUIDisplay-Regular',
-        fontSize: scale(16),
-        lineHeight: scale(18),
+        fontSize: moderateScale(17),
+        lineHeight: moderateScale(18),
         color: '#262626',
     }
 });
