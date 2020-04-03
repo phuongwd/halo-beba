@@ -1,6 +1,7 @@
 import { ArticleScreen } from "./ArticleScreen";
 import { ArticlesSection } from "./ArticlesSection";
 import { CategoryArticlesScreen } from "./CategoryArticlesScreen";
+import { DidntFindAnswers } from "./DidntFindAnswers";
 import { FaqCategoryScreen } from "./FaqCategoryScreen";
 import { FaqScreen } from "./FaqScreen";
 import { HomeScreen } from "./HomeScreen";
@@ -15,3 +16,4 @@ export { SearchResultsScreen };
 export { ListCard };
 export { FaqScreen };
 export { FaqCategoryScreen };
+export { DidntFindAnswers };

@@ -8,6 +8,7 @@ import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { ListCard, ListCardMode } from './ListCard';
 import { listCardArticlesDummyData, listCardFaqDummyData } from "../../dummy-data/listCardDummyData";
+import { DidntFindAnswers } from './DidntFindAnswers';
 
 export interface SearchResultsScreenParams {
     searchTerm?: string;
@@ -43,14 +44,6 @@ export class SearchResultsScreen extends React.Component<Props, State> {
 
     private gotoBack() {
         this.props.navigation.goBack();
-    }
-
-    private sendEmail() {
-        Linking.openURL(`mailto:${translate('appEmail')}`).catch(() => {});
-    }
-
-    private callPhone() {
-        Linking.openURL(`tel:${translate('appPhone')}`).catch(() => {});
     }
 
     public render() {
@@ -98,33 +91,7 @@ export class SearchResultsScreen extends React.Component<Props, State> {
 
                         {/* YOU DIDNT FIND ANSWER */}
                         <View style={{height:scale(40)}} />
-
-                        <Typography style={{marginBottom:scale(25)}} type={TypographyType.headingSecondary}>
-                                { translate('didntFindAnswerInSearchResults') }
-                        </Typography>
-
-                        <Typography style={{fontWeight:'bold'}} type={TypographyType.bodyRegular}>
-                            { translate('writeUsEmail') }
-                        </Typography>
-
-                        <View style={{height:scale(5)}} />
-
-                        <TextButton onPress={() => {this.sendEmail()}} icon="envelope" color={TextButtonColor.purple}>
-                            { translate('appEmail') }
-                        </TextButton>
-
-                        <View style={{height:scale(20)}} />
-
-                        <Typography style={{fontWeight:'bold'}} type={TypographyType.bodyRegular}>
-                            { translate('callUs') }
-                        </Typography>
-
-                        <View style={{height:scale(5)}} />
-
-                        <TextButton onPress={() => {this.callPhone()}} icon="phone" color={TextButtonColor.purple}>
-                            { translate('appPhone') }
-                        </TextButton>
-
+                        <DidntFindAnswers />
                         <View style={{height:scale(40)}} />
                     </View>
                 </ScrollView>

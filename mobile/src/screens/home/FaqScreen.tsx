@@ -8,6 +8,7 @@ import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { ListCard, ListCardMode } from './ListCard';
 import { listCardFaqYourChildDummyData, listCardFaqPerAgeDummyData, listCardFaqMamaDummyData } from '../../dummy-data/listCardDummyData';
+import { DidntFindAnswers } from './DidntFindAnswers';
 
 export interface FaqScreenParams {
 
@@ -89,7 +90,10 @@ export class FaqScreen extends React.Component<Props, object> {
                         onItemPress={(item) => {console.warn(item.id)}}
                     />
 
-                    <View style={{height:scale(20)}} />
+                    {/* YOU DIDNT FIND ANSWER */}
+                    <View style={{height:scale(40)}} />
+                    <DidntFindAnswers />
+                    <View style={{height:scale(40)}} />
                 </ScrollView>
             )}
             </ThemeConsumer>
