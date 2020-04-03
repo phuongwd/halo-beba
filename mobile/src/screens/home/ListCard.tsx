@@ -201,7 +201,7 @@ export class ListCard extends React.Component<Props, State> {
                                     color={TextButtonColor.purple}
                                     style={{ marginTop: scale(10) }}
                                 >
-                                    {this.state.showAllItems ? translate('showLessResults') : translate('showAllResults')}
+                                    {this.state.showAllItems ? translate('showLessResults') : translate('showAllResults') + ` (${this.props.items.length})`}
                                 </TextButton>
 
                                 {!this.state.showAllItems ? (

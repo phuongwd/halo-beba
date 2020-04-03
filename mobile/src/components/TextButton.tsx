@@ -1,13 +1,15 @@
 import React from 'react';
 import { Text, StyleProp, ViewStyle, StyleSheet, TouchableOpacity, TextStyle } from 'react-native';
+// https://materialdesignicons.com
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// https://fontawesome.com/icons?d=gallery&m=free
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export interface Props {
     color?: TextButtonColor;
     size?: TextButtonSize;
     /**
-     * Search for icons [here](https://materialdesignicons.com).
+     * Search for icons [here](https://fontawesome.com/icons?d=gallery&m=free).
      */
     icon?: string;
     style?: StyleProp<ViewStyle>;
