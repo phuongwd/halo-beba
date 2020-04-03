@@ -1,6 +1,6 @@
 import { Props } from "../screens/home/ListCard";
 
-export const listCardArticlesDummyData: Props = {
+export const listCardArticlesSearchResultsDummyData: Props = {
     title: 'Nega i Higijena',
     subTitle: '8 Rezultata',
     items: [
@@ -15,7 +15,7 @@ export const listCardArticlesDummyData: Props = {
     ],
 };
 
-export const listCardFaqDummyData: Props = {
+export const listCardFaqSearchResultsDummyData: Props = {
     title: 'Najčešća Pitanja',
     subTitle: '8 Rezultata',
     items: [
@@ -60,6 +60,21 @@ export const listCardFaqMamaDummyData: Props = {
         {id:3, title:'Mamino zdravlje posle porodjaja', type:'faq', bodyHtml:`<b>Occaecat</b> sunt velit dolor dolor duis consequat officia eiusmod sint. Deserunt adipisicing exercitation eu minim mollit nulla adipisicing ad velit. Esse occaecat Lorem tempor id irure ullamco ad irure dolore duis velit quis fugiat commodo. Laboris laboris aliquip eu aliqua non minim aute veniam. Et consectetur deserunt exercitation aliquip consectetur veniam.`},
         {id:4, title:'Ishrana i dojenje', type:'faq', bodyHtml:`<b>Velit</b> pariatur reprehenderit aliqua anim eu quis voluptate laboris ipsum. Aliqua pariatur elit irure cupidatat cillum incididunt ea minim nostrud non aliqua. Quis do officia labore ipsum laborum. Cillum laboris et proident commodo velit laboris labore et nulla culpa. Magna enim dolore duis fugiat. Do id aute ex sint aliquip dolor et.`},
         {id:5, title:'Uloga majke u porodici', type:'faq', bodyHtml:`<b>Esse</b> culpa minim mollit laborum. Aute enim eiusmod laborum ex sunt laborum veniam dolor nisi est. Id incididunt fugiat magna sint ea amet. Ad fugiat cupidatat sunt enim enim excepteur deserunt pariatur ex pariatur minim deserunt nulla velit.`},
+    ],
+};
+
+export const listCardFaqDummyData: Props = {
+    items: [
+        {id:1, title:'Dojim svoju bebu. Da li je potrebno da joj dajem i vodu?', type:'faq', bodyHtml:`<b>Adipisicing</b> in nulla cillum ex amet minim anim ad sit ut duis. Non reprehenderit proident magna mollit do fugiat excepteur tempor in minim nulla incididunt reprehenderit magna. Eiusmod aliqua exercitation non irure tempor.`},
+        {id:2, title:'Da li adaptirano mleko mogu da pripremam sa prokuvanom prohlađenom vodom sa česme?', type:'faq', bodyHtml:`<b>Fugiat</b> id nulla deserunt nisi velit ea ut tempor fugiat reprehenderit culpa non nisi. Incididunt laboris officia laboris et exercitation ex deserunt ullamco. Ex pariatur dolore nulla elit occaecat laborum dolore irure irure cupidatat ea non non qui. Aliquip ipsum veniam enim ut mollit non aliquip non. Amet adipisicing minim commodo ex fugiat sit id elit fugiat voluptate consectetur.`},
+        {id:3, title:'Dojim svoju bebu već šest meseci i planiram polako da joj uvedem i čvrstu hranu. Da li je moje mleko dovoljna tečnost za bebu ili ipak treba da joj dodam i vodu?', type:'faq', bodyHtml:`<b>Occaecat</b> sunt velit dolor dolor duis consequat officia eiusmod sint. Deserunt adipisicing exercitation eu minim mollit nulla adipisicing ad velit. Esse occaecat Lorem tempor id irure ullamco ad irure dolore duis velit quis fugiat commodo. Laboris laboris aliquip eu aliqua non minim aute veniam. Et consectetur deserunt exercitation aliquip consectetur veniam.`},
+        {id:4, title:'Kako da znam da mojoj tromesečnoj bebi nedostaje tečnost i šta da radim ako jeste?', type:'faq', bodyHtml:`<b>Velit</b> pariatur reprehenderit aliqua anim eu quis voluptate laboris ipsum. Aliqua pariatur elit irure cupidatat cillum incididunt ea minim nostrud non aliqua. Quis do officia labore ipsum laborum. Cillum laboris et proident commodo velit laboris labore et nulla culpa. Magna enim dolore duis fugiat. Do id aute ex sint aliquip dolor et.`},
+        {id:5, title:'Moja desetomesečna beba povraća ima visoku temperaturu i proliv. Šta da radim?', type:'faq', bodyHtml:`<b>Esse</b> culpa minim mollit laborum. Aute enim eiusmod laborum ex sunt laborum veniam dolor nisi est. Id incididunt fugiat magna sint ea amet. Ad fugiat cupidatat sunt enim enim excepteur deserunt pariatur ex pariatur minim deserunt nulla velit.`},
+        {id:6, title:'Dojim svoju bebu. Da li je potrebno da joj dajem i vodu?', type:'faq', bodyHtml:`<b>Adipisicing</b> in nulla cillum ex amet minim anim ad sit ut duis. Non reprehenderit proident magna mollit do fugiat excepteur tempor in minim nulla incididunt reprehenderit magna. Eiusmod aliqua exercitation non irure tempor.`},
+        {id:7, title:'Da li adaptirano mleko mogu da pripremam sa prokuvanom prohlađenom vodom sa česme?', type:'faq', bodyHtml:`<b>Fugiat</b> id nulla deserunt nisi velit ea ut tempor fugiat reprehenderit culpa non nisi. Incididunt laboris officia laboris et exercitation ex deserunt ullamco. Ex pariatur dolore nulla elit occaecat laborum dolore irure irure cupidatat ea non non qui. Aliquip ipsum veniam enim ut mollit non aliquip non. Amet adipisicing minim commodo ex fugiat sit id elit fugiat voluptate consectetur.`},
+        {id:8, title:'Dojim svoju bebu već šest meseci i planiram polako da joj uvedem i čvrstu hranu. Da li je moje mleko dovoljna tečnost za bebu ili ipak treba da joj dodam i vodu?', type:'faq', bodyHtml:`<b>Occaecat</b> sunt velit dolor dolor duis consequat officia eiusmod sint. Deserunt adipisicing exercitation eu minim mollit nulla adipisicing ad velit. Esse occaecat Lorem tempor id irure ullamco ad irure dolore duis velit quis fugiat commodo. Laboris laboris aliquip eu aliqua non minim aute veniam. Et consectetur deserunt exercitation aliquip consectetur veniam.`},
+        {id:9, title:'Kako da znam da mojoj tromesečnoj bebi nedostaje tečnost i šta da radim ako jeste?', type:'faq', bodyHtml:`<b>Velit</b> pariatur reprehenderit aliqua anim eu quis voluptate laboris ipsum. Aliqua pariatur elit irure cupidatat cillum incididunt ea minim nostrud non aliqua. Quis do officia labore ipsum laborum. Cillum laboris et proident commodo velit laboris labore et nulla culpa. Magna enim dolore duis fugiat. Do id aute ex sint aliquip dolor et.`},
+        {id:10, title:'Moja desetomesečna beba povraća ima visoku temperaturu i proliv. Šta da radim?', type:'faq', bodyHtml:`<b>Esse</b> culpa minim mollit laborum. Aute enim eiusmod laborum ex sunt laborum veniam dolor nisi est. Id incididunt fugiat magna sint ea amet. Ad fugiat cupidatat sunt enim enim excepteur deserunt pariatur ex pariatur minim deserunt nulla velit.`},
     ],
 };
 

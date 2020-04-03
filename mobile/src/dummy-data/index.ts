@@ -1,8 +1,8 @@
 import { articlesSectionAllData } from "./articlesSectionAllData";
 import { articlesSectionRelatedArticles } from "./articlesSectionRelatedArticles";
-import { listCardArticlesDummyData, listCardFaqDummyData } from "./listCardDummyData";
+import { listCardArticlesSearchResultsDummyData, listCardFaqSearchResultsDummyData } from "./listCardDummyData";
 
 export { articlesSectionAllData };
 export { articlesSectionRelatedArticles };
-export { listCardArticlesDummyData };
-export { listCardFaqDummyData };
+export { listCardArticlesSearchResultsDummyData as listCardArticlesDummyData };
+export { listCardFaqSearchResultsDummyData as listCardFaqDummyData };

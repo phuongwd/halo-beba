@@ -7,7 +7,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { ListCard, ListCardMode } from './ListCard';
-import { listCardArticlesDummyData, listCardFaqDummyData } from "../../dummy-data/listCardDummyData";
+import { listCardArticlesSearchResultsDummyData, listCardFaqSearchResultsDummyData } from "../../dummy-data/listCardDummyData";
 import { DidntFindAnswers } from './DidntFindAnswers';
 
 export interface SearchResultsScreenParams {
@@ -72,9 +72,9 @@ export class SearchResultsScreen extends React.Component<Props, State> {
                         {/* LIST CARD: Articles */}
                         <ListCard
                             mode={ ListCardMode.simpleList }
-                            title={ listCardArticlesDummyData.title }
-                            subTitle={ listCardArticlesDummyData.subTitle }
-                            items={ listCardArticlesDummyData.items }
+                            title={ listCardArticlesSearchResultsDummyData.title }
+                            subTitle={ listCardArticlesSearchResultsDummyData.subTitle }
+                            items={ listCardArticlesSearchResultsDummyData.items }
                             onItemPress={(item) => {console.warn(item.id)}}
                         />
 
@@ -83,9 +83,9 @@ export class SearchResultsScreen extends React.Component<Props, State> {
                         {/* LIST CARD: FAQ */}
                         <ListCard
                             mode={ ListCardMode.accordionList }
-                            title={ listCardFaqDummyData.title }
-                            subTitle={ listCardFaqDummyData.subTitle }
-                            items={ listCardFaqDummyData.items }
+                            title={ listCardFaqSearchResultsDummyData.title }
+                            subTitle={ listCardFaqSearchResultsDummyData.subTitle }
+                            items={ listCardFaqSearchResultsDummyData.items }
                             onItemPress={(item) => {console.warn(item.id)}}
                         />
 

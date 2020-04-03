@@ -9,6 +9,7 @@ import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { ListCard, ListCardMode } from './ListCard';
 import { listCardFaqYourChildDummyData, listCardFaqPerAgeDummyData, listCardFaqMamaDummyData } from '../../dummy-data/listCardDummyData';
 import { DidntFindAnswers } from './DidntFindAnswers';
+import { FaqCategoryScreenParams } from './FaqCategoryScreen';
 
 export interface FaqScreenParams {
 
@@ -42,6 +43,14 @@ export class FaqScreen extends React.Component<Props, object> {
         this.props.navigation.goBack();
     }
 
+    private gotoFaqCategoryScreen () {
+        let params: FaqCategoryScreenParams = {
+    
+        };
+        
+        this.props.navigation.navigate('HomeStackNavigator_FaqCategoryScreen', params);
+    }
+
     public render() {
         return (
             <ThemeConsumer>
@@ -67,7 +76,7 @@ export class FaqScreen extends React.Component<Props, object> {
                         mode={ ListCardMode.simpleList }
                         title={ listCardFaqYourChildDummyData.title }
                         items={ listCardFaqYourChildDummyData.items }
-                        onItemPress={(item) => {console.warn(item.id)}}
+                        onItemPress={(item) => {this.gotoFaqCategoryScreen()}}
                     />
 
                     <View style={{height:scale(20)}} />
@@ -77,7 +86,7 @@ export class FaqScreen extends React.Component<Props, object> {
                         mode={ ListCardMode.simpleList }
                         title={ listCardFaqPerAgeDummyData.title }
                         items={ listCardFaqPerAgeDummyData.items }
-                        onItemPress={(item) => {console.warn(item.id)}}
+                        onItemPress={(item) => {this.gotoFaqCategoryScreen()}}
                     />
 
                     <View style={{height:scale(20)}} />
@@ -87,7 +96,7 @@ export class FaqScreen extends React.Component<Props, object> {
                         mode={ ListCardMode.simpleList }
                         title={ listCardFaqMamaDummyData.title }
                         items={ listCardFaqMamaDummyData.items }
-                        onItemPress={(item) => {console.warn(item.id)}}
+                        onItemPress={(item) => {this.gotoFaqCategoryScreen()}}
                     />
 
                     {/* YOU DIDNT FIND ANSWER */}

@@ -119,7 +119,7 @@ const HomeStackNavigator = createStackNavigator({
             title: "FAQ"
         }
     },
-    HomeStackNavigator_FaqCategoryScreenScreen: {
+    HomeStackNavigator_FaqCategoryScreen: {
         screen: FaqCategoryScreen,
         navigationOptions: {
             title: "FAQ"

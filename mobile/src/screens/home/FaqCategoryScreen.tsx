@@ -1,7 +1,14 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle } from 'react-native';
+import { ScrollView, View, Text, Button, StyleSheet, ViewStyle } from 'react-native';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
+import { translate } from '../../translations/translate';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { Typography, TypographyType } from '../../components/Typography';
+import { TextButton, TextButtonColor } from '../../components/TextButton';
+import { ListCard, ListCardMode } from './ListCard';
+import { listCardFaqYourChildDummyData, listCardFaqPerAgeDummyData, listCardFaqMamaDummyData, listCardFaqDummyData } from '../../dummy-data/listCardDummyData';
+import { DidntFindAnswers } from './DidntFindAnswers';
 
 export interface FaqCategoryScreenParams {
 
@@ -31,19 +38,47 @@ export class FaqCategoryScreen extends React.Component<Props, object> {
         }
     }
 
+    private gotoBack() {
+        this.props.navigation.goBack();
+    }
+
     public render() {
         const screenParams = this.props.navigation.state.params!;
 
         return (
             <ThemeConsumer>
             {(themeContext:ThemeContextValue) => (
-                <SafeAreaView style={ [styles.container, themeContext.theme.contentContainer] }>
-                    <View style={ {backgroundColor:'white', flex:1, flexDirection:'column', justifyContent:'flex-start', alignItems:'stretch'} }>
-                        <Text style={ {fontSize:20, textAlign:'left'} }>
-                            FaqCategoryScreen
-                        </Text>
-                    </View>
-                </SafeAreaView>
+                <ScrollView
+                    style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
+                    contentContainerStyle={ [[styles.container], {padding:themeContext.theme.screenContainer?.padding}] }
+                >
+                    {/* GO BACK */}
+                    <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
+                        {translate('buttonBack')}
+                    </TextButton>
+
+                    <View style={{height:scale(15)}} />
+
+                    {/* TITLE */}
+                    <Typography type={TypographyType.headingPrimary}>
+                        Ishrana i dojenje
+                    </Typography>
+
+                    {/* LIST CARD: FAQ category items */}
+                    <ListCard
+                        mode={ ListCardMode.accordionList }
+                        title={ listCardFaqDummyData.title }
+                        items={ listCardFaqDummyData.items }
+                        previewNumberOfItems={30}
+                    />
+
+                    {/* <View style={{height:scale(20)}} /> */}
+
+                    {/* YOU DIDNT FIND ANSWER */}
+                    <View style={{height:scale(40)}} />
+                    <DidntFindAnswers />
+                    <View style={{height:scale(40)}} />
+                </ScrollView>
             )}
             </ThemeConsumer>
         );
@@ -57,6 +92,6 @@ export interface FaqCategoryScreenStyles {
 
 const styles = StyleSheet.create<FaqCategoryScreenStyles>({
     container: {
-        flex: 1,
+        // flex: 1,
     },
 });
