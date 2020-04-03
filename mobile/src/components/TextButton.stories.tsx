@@ -20,7 +20,7 @@ storiesOf('TextButton', module)
 
 .add('with icon', () => (
     <View style = {{flex:1, padding:24, justifyContent:'center', alignItems:'stretch', backgroundColor:'white'}}>
-        <TextButton icon="email-outline" onPress={ action('text button pressed') }>Text button with icon</TextButton>
+        <TextButton icon="envelope" onPress={ action('text button pressed') }>Text button with icon</TextButton>
         <View style={{height:20}} />
         <TextButton icon="chevron-left" onPress={ action('text button pressed') }>Text button with icon</TextButton>
     </View>

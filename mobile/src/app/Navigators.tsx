@@ -21,7 +21,6 @@ import { WalkthroughScreen } from "../screens/login/WalkthroughScreen";
 import { StorybookScreen } from "../screens/StorybookScreen";
 import { themes } from "../themes/themes";
 import { translate } from '../translations/translate';
-import { AboutScreen } from "./AboutScreen";
 import { ArticleScreen } from "../screens/home/ArticleScreen";
 import { SearchResultsScreen } from "../screens/home/SearchResultsScreen";
 import { FaqScreen } from "../screens/home/FaqScreen";
@@ -291,12 +290,6 @@ const RootModalStackNavigator = createStackNavigator({
     },
     AccountStackNavigator: {
         screen: AccountStackNavigator
-    },
-    RootModalStackNavigator_AboutScreen: {
-        screen: AboutScreen,
-        navigationOptions: {
-            title: "About Title"
-        }
     },
     RootModalStackNavigator_RegisterCreatedScreen: {
         screen: RegisterCreatedScreen,
