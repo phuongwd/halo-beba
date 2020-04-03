@@ -4,6 +4,7 @@ import { TouchableRipple } from 'react-native-paper';
 import { translate } from '../translations/translate';
 import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
+import { RectButton } from "react-native-gesture-handler";
 
 export interface Props {
     title?: string;
@@ -28,7 +29,7 @@ export enum FancyButtonType {
     development,
     food,
     health,
-    hygiene,
+    safety,
     games,
     parents,
     faq,
@@ -136,13 +137,13 @@ export class FancyButton extends React.Component<Props, State> {
             state.containerStyle.paddingBottom = 15;
         }
 
-        if (this.props.type === FancyButtonType.hygiene) {
+        if (this.props.type === FancyButtonType.safety) {
             state.containerStyle.backgroundColor = '#F0F0FF';
             state.textStyle.color = '#6967E4';
-            state.text = translate('drawerButtonHygiene');
+            state.text = translate('drawerButtonSafety');
             state.iconComponent = (
                 <IconFontAwesome5
-                    name={ 'bath' }
+                    name={ 'shield-alt' }
                     style={ {fontSize:24, lineHeight:24, color:'#6967E4', marginBottom:13,} }
                 />
             );
@@ -203,7 +204,7 @@ export class FancyButton extends React.Component<Props, State> {
 
     public render() {
         return (
-            <TouchableRipple
+            <RectButton
                 style={ [styles.container, this.state.containerStyle, this.props.style] }
                 onPress={ () => {this.onPress()} }
             >
@@ -211,7 +212,7 @@ export class FancyButton extends React.Component<Props, State> {
                     {this.state.iconComponent}
                     <Text style={ [this.state.textStyle, this.props.textStyle] }>{ this.props.title ? this.props.title : this.state.text }</Text>
                 </View>
-            </TouchableRipple>
+            </RectButton>
         );
     }
 }
@@ -227,9 +228,11 @@ const styles = StyleSheet.create<FancyButtonStyles>({
         alignItems: 'center',
         marginRight:7, marginBottom:8,
         paddingTop:18, paddingBottom:18, paddingLeft:10, paddingRight:10,
-        elevation: 3,
-        shadowOffset: {width:3, height:3},
-        shadowOpacity: 0.1,
+        
+        overflow: 'visible',
         borderRadius: 5,
+        elevation: 3,
+        shadowOffset: {width:2, height:2},
+        shadowOpacity: 0.2,
     },
 });

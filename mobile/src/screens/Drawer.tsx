@@ -67,13 +67,13 @@ export class Drawer extends React.Component<Props> {
                     </View>
 
                     <View style={{flexDirection:'row'}}>
-                        <FancyButton type={ FancyButtonType.food } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.food)} } />
+                        <FancyButton type={ FancyButtonType.games } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.games)} } />
                         <FancyButton type={ FancyButtonType.health } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.health)} } />
                     </View>
             
                     <View style={{flexDirection:'row'}}>
-                        <FancyButton type={ FancyButtonType.hygiene } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.hygiene)} } />
-                        <FancyButton type={ FancyButtonType.games } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.games)} } />
+                        <FancyButton type={ FancyButtonType.safety } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.safety)} } />
+                        <FancyButton type={ FancyButtonType.food } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.food)} } />
                     </View>
             
                     <View style={{flexDirection:'row'}}>
@@ -88,12 +88,12 @@ export class Drawer extends React.Component<Props> {
 
                     <View style={{flexDirection:'row'}}>
                         <FancyButton type={ FancyButtonType.growth } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.growth)} } />
-                        <FancyButton type={ FancyButtonType.doctor } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.doctor)} } />
+                        <FancyButton type={ FancyButtonType.development } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.development)} } />
                     </View>
             
                     <View style={{flexDirection:'row'}}>
                         <FancyButton type={ FancyButtonType.vaccination } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.vaccination)} } />
-                        <FancyButton type={ FancyButtonType.development } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.development)} } />
+                        <FancyButton type={ FancyButtonType.doctor } style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.doctor)} } />
                     </View>
 
                     {/* ABOUT US */}

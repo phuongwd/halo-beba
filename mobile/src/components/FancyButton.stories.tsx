@@ -24,7 +24,7 @@ storiesOf('FancyButton', module)
         </View>
 
         <View style={{flexDirection:'row'}}>
-            <FancyButton type={ FancyButtonType.hygiene } style={{flex:1}} onPress={ action('button clicked') } />
+            <FancyButton type={ FancyButtonType.safety } style={{flex:1}} onPress={ action('button clicked') } />
             <FancyButton type={ FancyButtonType.games } style={{flex:1}} onPress={ action('button clicked') } />
         </View>
 
