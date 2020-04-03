@@ -24,6 +24,8 @@ import { translate } from '../translations/translate';
 import { AboutScreen } from "./AboutScreen";
 import { ArticleScreen } from "../screens/home/ArticleScreen";
 import { SearchResultsScreen } from "../screens/home/SearchResultsScreen";
+import { FaqScreen } from "../screens/home/FaqScreen";
+import { FaqCategoryScreen } from "../screens/home/FaqCategoryScreen";
 
 /**
  * Use it to [navigate screens](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
@@ -109,6 +111,18 @@ const HomeStackNavigator = createStackNavigator({
         screen: SearchResultsScreen,
         navigationOptions: {
             title: "Search results"
+        }
+    },
+    HomeStackNavigator_FaqScreenScreen: {
+        screen: FaqScreen,
+        navigationOptions: {
+            title: "FAQ"
+        }
+    },
+    HomeStackNavigator_FaqCategoryScreenScreen: {
+        screen: FaqCategoryScreen,
+        navigationOptions: {
+            title: "FAQ"
         }
     },
 }, {

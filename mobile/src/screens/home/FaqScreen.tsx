@@ -3,14 +3,32 @@ import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle } from 'react-n
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 
+export interface FaqScreenParams {
+
+}
+
 export interface Props {
-    navigation: NavigationStackProp<NavigationStackState>;
+    navigation: NavigationStackProp<NavigationStackState, FaqScreenParams>;
 }
 
 export class FaqScreen extends React.Component<Props, object> {
 
     public constructor(props:Props) {
         super(props);
+
+        this.setDefaultScreenParams();
+    }
+
+    private setDefaultScreenParams() {
+        let defaultScreenParams: FaqScreenParams = {
+            
+        };
+
+        if (this.props.navigation.state.params) {
+            this.props.navigation.state.params = Object.assign({}, defaultScreenParams, this.props.navigation.state.params);
+        } else {
+            this.props.navigation.state.params = defaultScreenParams;
+        }
     }
 
     public render() {
