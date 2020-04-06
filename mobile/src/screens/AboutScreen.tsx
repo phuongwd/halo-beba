@@ -1,6 +1,11 @@
 import React from 'react';
-import { View, SafeAreaView, Text, Button } from 'react-native';
+import { View, SafeAreaView, Text, Button, ScrollView, ViewStyle, StyleSheet } from 'react-native';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
+import { ThemeContextValue, ThemeConsumer } from '../themes/ThemeContext';
+import { translate } from '../translations/translate';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { Typography, TypographyType } from '../components/Typography';
+import { TextButton, TextButtonColor } from '../components/TextButton';
 
 export interface AboutScreenParams {
     showSearchInput?: boolean;
@@ -32,15 +37,45 @@ export class AboutScreen extends React.Component<Props, object> {
         }
     }
 
+    private gotoBack() {
+        this.props.navigation.goBack();
+    }
+
     public render() {
         return (
-            <SafeAreaView style={ {flex:1} }>
-                <View style={ {flex:1, flexDirection:'column', justifyContent:'flex-start', alignItems:'stretch'} }>
-                    <Text style={ {fontSize:20, textAlign:'left'} }> AboutScreen </Text>
-                    <Button title="Go back" onPress={() => {this.props.navigation.goBack()}} />
-                </View>
-            </SafeAreaView>
+            <ThemeConsumer>
+            {(themeContext:ThemeContextValue) => (
+                <ScrollView
+                    style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
+                    contentContainerStyle={ [styles.container] }
+                >
+                    <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
+                        {/* GO BACK */}
+                        <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
+                            {translate('buttonBack')}
+                        </TextButton>
+
+                        <View style={{height:scale(15)}} />
+
+                        {/* TITLE */}
+                        <Typography type={TypographyType.headingPrimary}>
+                            { translate('aboutUs') }
+                        </Typography>
+                    </View>
+                </ScrollView>
+            )}
+            </ThemeConsumer>
         );
     }
 
 }
+
+export interface AboutScreenStyles {
+    container?: ViewStyle;
+}
+
+const styles = StyleSheet.create<AboutScreenStyles>({
+    container: {
+        // flex: 1,
+    },
+});
