@@ -7,6 +7,7 @@ import { FaqScreen } from "./FaqScreen";
 import { HomeScreen } from "./HomeScreen";
 import { ListCard } from "./ListCard";
 import { SearchResultsScreen } from "./SearchResultsScreen";
+import { SettingsScreen } from "./SettingsScreen";
 
 export { HomeScreen };
 export { CategoryArticlesScreen };
@@ -17,3 +18,4 @@ export { ListCard };
 export { FaqScreen };
 export { FaqCategoryScreen };
 export { DidntFindAnswers };
+export { SettingsScreen };
