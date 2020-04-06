@@ -3,6 +3,7 @@ import { View, StyleProp, ViewStyle, StyleSheet, TextStyle, TextInput, Text, Tou
 
 export interface Props {
     label?: string;
+    placeholder?: string;
     value?: string;
     style?: StyleProp<ViewStyle>;
     textStyle?: StyleProp<TextStyle>;
@@ -55,8 +56,12 @@ export class RoundedTextArea extends React.Component<Props, State> {
                 onPress={ () => {this.onComponentPress()} }
             >
                 <View style={ [styles.container, this.props.style] }>
-                    <Text style={ [styles.label, this.props.labelStyle] }>{ this.props.label }</Text>
+                    {this.props.label ? (
+                        <Text style={ [styles.label, this.props.labelStyle] }>{ this.props.label }</Text>
+                    ) : null}
+                    
                     <TextInput
+                        placeholder={ this.props.placeholder }
                         ref={ this.textArea }
                         style={ [styles.textInput, this.props.textStyle] }
                         multiline={ true }

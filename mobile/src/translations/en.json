@@ -48,6 +48,7 @@
     "fieldLabelRepeatPassword": "Ponovite lozinku",
     "fieldLabelName": "Ime",
     "fieldLabelSurname": "Prezime",
+    "fieldLabelComment": "Komentar",
 
     "buttonGotoHome": "Nazad na početni ekran",
     "buttonNext": "Dalje",
@@ -77,5 +78,14 @@
     "settingsEnterDevelopment": "Želim da beležim razvojne događaje i da me aplikacija podseća da unosim podatke",
     "settingsEnterDoctorVisits": "Želim da evidentiram posete doktoru i da me aplikacija podseća da unosim podatke",
     "settingsButtonExport": "Izvezite sve sačuvane podatke",
-    "settingsButtonDeleteAllData": "Obrišite nalog i izbrišite sve podatke"
+    "settingsButtonDeleteAllData": "Obrišite nalog i izbrišite sve podatke",
+
+    "appFeedbackTitle": "Hvala Vam što učestvujete!",
+    "appFeedbackSubTitle": "Poboljšajte aplikaciju: Sve komentare koje ostavite uzećemo u razmatranje, jer bebe to zaslužuju!",
+    "appFeedbackQuestion1": "Zbog čega danas koristite aplikaciju?",
+    "appFeedbackQuestion2": "Da li ste pronašli ono što ste tražili u aplikaciji?",
+    "appFeedbackQuestion3": "Imate li pitanja na koja niste pronašli odgovor?",
+    "appFeedbackQuestion4": "Kada biste mogli da promenite jednu stvar u aplikaciji, šta bi to bilo?",
+    "appFeedbackQuestion5": "Kako biste ocenili sveukupno iskustvo korišćenja aplikacije?",
+    "appFeedbackButtonSend": "Pošaljite odgovore"
 }

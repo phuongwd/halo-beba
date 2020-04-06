@@ -54,7 +54,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                     style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
                     contentContainerStyle={ [styles.container] }
                 >
-                    <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
+                    <View style={{alignItems:'stretch', padding:themeContext.theme.screenContainer?.padding}}>
                         {/* GO BACK */}
                         <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
                             {translate('buttonBack')}
@@ -63,11 +63,23 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                         <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                         {/* TITLE */}
-                        <Typography type={TypographyType.headingSecondary}>
-                            { translate('settingsTitleNotifications') }
+                        <Typography type={TypographyType.headingPrimary}>
+                            { translate('appFeedbackTitle') }
                         </Typography>
 
-                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+                        {/* SUB TITLE */}
+                        <Typography type={TypographyType.bodyRegular}>
+                            { translate('appFeedbackSubTitle') }
+                        </Typography>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* QUESTION 1 */}
+                        <Typography type={TypographyType.headingSecondary}>
+                            { translate('appFeedbackQuestion1') }
+                        </Typography>
+
+                        <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={{backgroundColor:'white'}}></RoundedTextArea>
                     </View>
                 </ScrollView>
             )}
@@ -83,6 +95,6 @@ export interface AppFeedbackScreenStyles {
 
 const styles = StyleSheet.create<AppFeedbackScreenStyles>({
     container: {
-        flex: 1,
+        
     },
 });
