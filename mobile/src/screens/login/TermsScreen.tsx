@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { SafeAreaView, View, Text, Image, StyleSheet, ViewStyle, StatusBar } from 'react-native';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { translate } from '../../translations/translate';
@@ -8,9 +8,16 @@ import { Checkbox } from 'react-native-paper';
 import { themes } from '../../themes/themes';
 import { Typography, TypographyType } from '../../components/Typography';
 import { RoundedButton, RoundedButtonType, RoundedButtonStyles } from '../../components/RoundedButton';
+import { TextButton, TextButtonColor } from '../../components/TextButton';
+
+export interface TermsScreenParams {
+    showSearchInput?: boolean;
+    hideCheckboxes?: boolean;
+    showBackButton?: boolean;
+}
 
 export interface Props {
-    navigation: NavigationStackProp<NavigationStackState>;
+    navigation: NavigationStackProp<NavigationStackState, TermsScreenParams>;
 }
 
 export interface State {
@@ -26,7 +33,22 @@ export class TermsScreen extends React.Component<Props, State> {
 
     public constructor(props:Props) {
         super(props);
+        this.setDefaultScreenParams();
         this.initState();
+    }
+
+    private setDefaultScreenParams() {
+        let defaultScreenParams: TermsScreenParams = {
+            showSearchInput: false,
+            hideCheckboxes: false,
+            showBackButton: false,
+        };
+
+        if (this.props.navigation.state.params) {
+            this.props.navigation.state.params = Object.assign({}, defaultScreenParams, this.props.navigation.state.params);
+        } else {
+            this.props.navigation.state.params = defaultScreenParams;
+        }
     }
 
     private initState() {
@@ -47,13 +69,25 @@ export class TermsScreen extends React.Component<Props, State> {
         this.props.navigation.navigate('AccountStackNavigator_AddChildrenScreen');
     };
 
+    private gotoBack() {
+        this.props.navigation.goBack();
+    }
+    
     public render() {
         let colors = themes.getCurrentTheme().theme.variables?.colors;
+        const screenParams = this.props.navigation.state.params!;
 
         return (
             <SafeAreaView style={ [styles.container] }>
                 <StatusBar barStyle="dark-content" />
                 <View style={ styles.innerContainer }>
+                    {/* GO BACK */}
+                    <TextButton style={{marginLeft:scale(15), padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
+                        {translate('buttonBack')}
+                    </TextButton>
+
+                    <View style={{height:scale(15)}} />
+
                     <Typography type={ TypographyType.headingPrimary } style={{textAlign:'center'}}>
                         Uslovi korišćenja aplikacije
                     </Typography>
@@ -82,59 +116,63 @@ export class TermsScreen extends React.Component<Props, State> {
                         </Typography>
 
                         {/* CHECKBOXES */}
-                        <View style={{marginTop:scale(20), paddingRight:scale(40) }}>
-                            
-                            {/* checkPrivateData */}
-                            <View style={{flexDirection:'row', alignItems:'center'}}>
-                                <Checkbox.Android
-                                    status={ this.state.checkPrivateData ? 'checked' : 'unchecked' }
-                                    onPress={() => { this.setState({checkPrivateData:!this.state.checkPrivateData}); }}
-                                    color={ colors?.checkboxColor }
-                                />
-                                <TouchableWithoutFeedback style={{padding:5}} onPress={() => { this.setState({checkPrivateData:!this.state.checkPrivateData}); }}>
-                                    <Typography type={ TypographyType.bodyRegular } style={{flex:1, textAlign:'left', marginLeft:scale(5)}}>
-                                        Razumem da podaci o detetu ostaju privatni i čuvaju se samo u aplikaciji
-                                    </Typography>
-                                </TouchableWithoutFeedback>
-                            </View>
+                        {!screenParams.hideCheckboxes ? (
+                            <Fragment>
+                                <View style={{marginTop:scale(20), paddingRight:scale(40) }}>
+                                    
+                                    {/* checkPrivateData */}
+                                    <View style={{flexDirection:'row', alignItems:'center'}}>
+                                        <Checkbox.Android
+                                            status={ this.state.checkPrivateData ? 'checked' : 'unchecked' }
+                                            onPress={() => { this.setState({checkPrivateData:!this.state.checkPrivateData}); }}
+                                            color={ colors?.checkboxColor }
+                                        />
+                                        <TouchableWithoutFeedback style={{padding:5}} onPress={() => { this.setState({checkPrivateData:!this.state.checkPrivateData}); }}>
+                                            <Typography type={ TypographyType.bodyRegular } style={{flex:1, textAlign:'left', marginLeft:scale(5)}}>
+                                                Razumem da podaci o detetu ostaju privatni i čuvaju se samo u aplikaciji
+                                            </Typography>
+                                        </TouchableWithoutFeedback>
+                                    </View>
 
-                            {/* checkOtherConditions */}
-                            <View style={{flexDirection:'row', marginTop:scale(14), alignItems:'center'}}>
-                                <Checkbox.Android
-                                    status={ this.state.checkOtherConditions ? 'checked' : 'unchecked' }
-                                    onPress={() => { this.setState({checkOtherConditions:!this.state.checkOtherConditions}); }}
-                                    color={ colors?.checkboxColor }
-                                />
-                                <TouchableWithoutFeedback style={{padding:5}} onPress={() => { this.setState({checkOtherConditions:!this.state.checkOtherConditions}); }}>
-                                    <Typography type={ TypographyType.bodyRegular } style={{flex:1, textAlign:'left', marginLeft:scale(5)}}>
-                                        Razumem ostale uslove korišćenja
-                                    </Typography>
-                                </TouchableWithoutFeedback>
-                            </View>
+                                    {/* checkOtherConditions */}
+                                    <View style={{flexDirection:'row', marginTop:scale(14), alignItems:'center'}}>
+                                        <Checkbox.Android
+                                            status={ this.state.checkOtherConditions ? 'checked' : 'unchecked' }
+                                            onPress={() => { this.setState({checkOtherConditions:!this.state.checkOtherConditions}); }}
+                                            color={ colors?.checkboxColor }
+                                        />
+                                        <TouchableWithoutFeedback style={{padding:5}} onPress={() => { this.setState({checkOtherConditions:!this.state.checkOtherConditions}); }}>
+                                            <Typography type={ TypographyType.bodyRegular } style={{flex:1, textAlign:'left', marginLeft:scale(5)}}>
+                                                Razumem ostale uslove korišćenja
+                                            </Typography>
+                                        </TouchableWithoutFeedback>
+                                    </View>
 
-                            {/* checkAnonDataAccess */}
-                            <View style={{flexDirection:'row', marginTop:scale(14), alignItems:'center'}}>
-                                <Checkbox.Android
-                                    status={ this.state.checkAnonDataAccess ? 'checked' : 'unchecked' }
-                                    onPress={() => { this.setState({checkAnonDataAccess:!this.state.checkAnonDataAccess}); }}
-                                    color={ colors?.checkboxColor }
-                                />
-                                <TouchableWithoutFeedback style={{padding:5}} onPress={() => { this.setState({checkAnonDataAccess:!this.state.checkAnonDataAccess}); }}>
-                                    <Typography type={ TypographyType.bodyRegular } style={{flex:1, textAlign:'left', marginLeft:scale(5)}}>
-                                        Pristajem da se podaci o korišćenju anonimno obrađuju za poboljšanje aplikacije 
-                                    </Typography>
-                                </TouchableWithoutFeedback>
-                            </View>
-                        </View>
+                                    {/* checkAnonDataAccess */}
+                                    <View style={{flexDirection:'row', marginTop:scale(14), alignItems:'center'}}>
+                                        <Checkbox.Android
+                                            status={ this.state.checkAnonDataAccess ? 'checked' : 'unchecked' }
+                                            onPress={() => { this.setState({checkAnonDataAccess:!this.state.checkAnonDataAccess}); }}
+                                            color={ colors?.checkboxColor }
+                                        />
+                                        <TouchableWithoutFeedback style={{padding:5}} onPress={() => { this.setState({checkAnonDataAccess:!this.state.checkAnonDataAccess}); }}>
+                                            <Typography type={ TypographyType.bodyRegular } style={{flex:1, textAlign:'left', marginLeft:scale(5)}}>
+                                                Pristajem da se podaci o korišćenju anonimno obrađuju za poboljšanje aplikacije 
+                                            </Typography>
+                                        </TouchableWithoutFeedback>
+                                    </View>
+                                </View>
 
-                        {/* ACCEPT BUTTON */}
-                        <RoundedButton
-                            text = "Prihvatam uslove korišćenja"
-                            disabled = { this.state.checkPrivateData && this.state.checkOtherConditions ? false : true }
-                            type = { RoundedButtonType.purple }
-                            onPress={ () => {this.onAcceptButtonClick()} }
-                            style={{marginTop:scale(30)}}
-                        />
+                                {/* ACCEPT BUTTON */}
+                                <RoundedButton
+                                    text = "Prihvatam uslove korišćenja"
+                                    disabled = { this.state.checkPrivateData && this.state.checkOtherConditions ? false : true }
+                                    type = { RoundedButtonType.purple }
+                                    onPress={ () => {this.onAcceptButtonClick()} }
+                                    style={{marginTop:scale(30)}}
+                                />
+                            </Fragment>
+                        ) : null}
                     </ScrollView>
                 </View>
             </SafeAreaView>

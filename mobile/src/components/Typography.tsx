@@ -57,7 +57,7 @@ export class Typography extends React.Component<Props, State> {
             state.fontFamily = 'SFUIDisplay-Bold',
             state.fontSize = scale(20);
             state.lineHeight = scale(25);
-            state.marginBottom = scale(15);
+            state.marginBottom = scale(8);
         }
 
         if (this.props.type === TypographyType.bodyRegularLargeSpacing) {

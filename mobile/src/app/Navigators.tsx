@@ -131,6 +131,12 @@ const HomeStackNavigator = createStackNavigator({
             title: "About"
         }
     },
+    HomeStackNavigator_TermsScreen: {
+        screen: TermsScreen,
+        navigationOptions: {
+            title: "Terms"
+        }
+    },
 }, {
         defaultNavigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
             function toggleSearchInput() {
