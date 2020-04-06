@@ -1,3 +1,4 @@
+import { AppFeedbackScreen } from "./AppFeedbackScreen";
 import { ArticleScreen } from "./ArticleScreen";
 import { ArticlesSection } from "./ArticlesSection";
 import { CategoryArticlesScreen } from "./CategoryArticlesScreen";
@@ -19,3 +20,4 @@ export { FaqScreen };
 export { FaqCategoryScreen };
 export { DidntFindAnswers };
 export { SettingsScreen };
+export { AppFeedbackScreen };
