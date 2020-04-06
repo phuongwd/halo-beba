@@ -16,7 +16,7 @@ export const defaultTheme = new Theme({
         variables: variables,
 
         screenContainer: {
-            padding: scale(15),
+            padding: scale(20),
             backgroundColor: variables?.colors?.background
         },
 
@@ -24,7 +24,7 @@ export const defaultTheme = new Theme({
             flexDirection: 'column',
             justifyContent: 'flex-start',
             alignItems: 'stretch',
-            padding: 15,
+            padding: scale(15),
         },
 
         headerTitle: {
