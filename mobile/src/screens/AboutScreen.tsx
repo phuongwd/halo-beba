@@ -78,7 +78,7 @@ export class AboutScreen extends React.Component<Props, object> {
                         {translate('buttonBack')}
                     </TextButton>
 
-                    <View style={{height:scale(15)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     {/* TITLE */}
                     <Typography type={TypographyType.headingPrimary}>
@@ -89,13 +89,13 @@ export class AboutScreen extends React.Component<Props, object> {
                         Halobeba je odsek Centra za promociju zdravlja Gradskog zavoda za javno zdravlje u Beogradu i predstavlja segment rada Kancelarije za zdravu porodicu Ministarstva zdravlja Republike Srbije.
                     </Typography>
 
-                    <View style={{height:scale(15)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     <Typography type={ TypographyType.bodyRegularLargeSpacing }>
                         Naš osnovni cilj je promocija zdravlja majke i deteta kroz podsticanje donošenja odluka vezanih za zdravlje, pravilnu ishranu, negu, rast i razvoj dece, a na bazi adekvatnih i pravovremenih informacija, poruka i saveta u skladu sa usaglašenim i savremenim stručnim stavovima.
                     </Typography>
 
-                    <View style={{height:scale(15)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     <Image
                         source={ require('../themes/assets/mom_holding_baby.png') }
@@ -103,7 +103,7 @@ export class AboutScreen extends React.Component<Props, object> {
                         resizeMode="cover"
                     />
 
-                    <View style={{height:scale(30)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* OUR MISSION */}
                     <Typography type={TypographyType.headingSecondary}>
@@ -114,7 +114,7 @@ export class AboutScreen extends React.Component<Props, object> {
                         Sprovodjenje aktivnosti i intervencija u oblasti promocije, unapređenja, očuvanja, kontrole i zaštite zdravlja majke i deteta, kroz jačanje kapaciteta porodice i osnaživanje roditelja.
                     </Typography>
 
-                    <View style={{height:scale(30)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* OUR VISION */}
                     <Typography type={TypographyType.headingSecondary}>
@@ -131,7 +131,7 @@ export class AboutScreen extends React.Component<Props, object> {
                         resizeMode="cover"
                     />
 
-                    <View style={{height:scale(30)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* BEGINNINGS */}
                     <Typography type={TypographyType.headingSecondary}>
@@ -142,7 +142,7 @@ export class AboutScreen extends React.Component<Props, object> {
                         Naš rad je 2001. godine pokrenut u okviru Gradskog zavoda za zaštitu zdravlja a uz podršku UNICEF-a, Skupštine grada Beograda i saglasnost tadašnjeg Ministarstva zdravlja i zaštite životne sredine Republike Srbije.
                     </Typography>
 
-                    <View style={{height:scale(30)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* CONTACT */}
                     <Typography type={TypographyType.headingSecondary}>
@@ -155,45 +155,45 @@ export class AboutScreen extends React.Component<Props, object> {
                         Beograd
                     </Typography>
 
-                    <View style={{height:scale(5)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingSmall}} />
 
                     <TextButton onPress={() => {this.sendEmail()}} icon="envelope" color={TextButtonColor.purple}>
                         { translate('appEmail') }
                     </TextButton>
 
-                    <View style={{height:scale(25)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* Savetovalište */}
                     <Typography type={ TypographyType.bodyRegular } style={{fontWeight:'bold'}}>
                         Savetovalište
                     </Typography>
 
-                    <View style={{height:scale(5)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingSmall}} />
 
                     <TextButton onPress={() => {this.callPhone()}} icon="phone" color={TextButtonColor.purple}>
                         { translate('appPhone') }
                     </TextButton>
 
-                    <View style={{height:scale(25)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* Radno vreme */}
                     <Typography type={ TypographyType.bodyRegular } style={{fontWeight:'bold'}}>
                         Radno vreme
                     </Typography>
 
-                    <View style={{height:scale(5)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingSmall}} />
 
                     <Typography type={ TypographyType.bodyRegular }>
                         Svakog dana 00 - 24h
                     </Typography>
 
-                    <View style={{height:scale(10)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     <TextButton onPress={() => {this.openWebsite()}} icon="globe" color={TextButtonColor.purple}>
                         HaloBeba websajt
                     </TextButton>
 
-                    <View style={{height:scale(30)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* APPLICATION */}
                     <Typography type={TypographyType.headingSecondary}>
@@ -204,7 +204,7 @@ export class AboutScreen extends React.Component<Props, object> {
                         Posvećeni smo kontiuniranom radu na poboljšanju aplikacije kako bismo roditeljima pružili kvalitetnu podršku. Pozivamo vas da svojim komentarima zajedno sa nama učestvujete u toj misiji.
                     </Typography>
 
-                    <View style={{height:scale(15)}} />
+                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     <TextButton onPress={() => {this.gotoTermsScreen()}} color={TextButtonColor.purple}>
                         Uslovi korišćenja aplikacije

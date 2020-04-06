@@ -48,5 +48,11 @@ interface Variables {
         headerBackButton?: string;
         headerIcon?: string;
         headerTitle?: string;
-    }
+    },
+
+    sizes: {
+        verticalPaddingNormal: number,
+        verticalPaddingSmall: number,
+        verticalPaddingLarge: number,
+    },
 }

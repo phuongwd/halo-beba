@@ -1,4 +1,5 @@
 import { ThemeStructure } from "../ThemeStructure";
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 type ThemeVariables = typeof ThemeStructure.prototype.variables;
 
@@ -21,5 +22,11 @@ export const variables: ThemeVariables = {
         headerBackButton: '#AA40BF',
         headerIcon: 'black',
         headerTitle: '#262626',
+    },
+
+    sizes: {
+        verticalPaddingNormal: scale(15),
+        verticalPaddingSmall: scale(5),
+        verticalPaddingLarge: scale(30),
     }
 };
