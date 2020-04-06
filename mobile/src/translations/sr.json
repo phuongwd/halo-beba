@@ -66,5 +66,16 @@
 
     "writeUsEmail": "Pišite nam na e-mail",
     "callUs": "Pozovite naše savetovalište",
-    "aboutUs": "O nama"
+    "aboutUs": "O nama",
+
+    "settingsTitleNotifications": "Obaveštenja",
+    "settingsNotificationsWithApp": "Želim da dobijam obaveštenja putem aplikacije",
+    "settingsNotificationsWithEmail": "Želim da dobijam obaveštenja putem Email-a",
+    "settingsNotificationsHelp": "Obaveštenja se objavljuju jednom nedeljno. Podsetnici o pregledima objavljuju se pet dana pre pregleda, jedan dan pre pregleda i na dan pregleda.",
+    "settingsTitleNotificationsDetails": "Evidencija podataka i podsetnici",
+    "settingsEnterGrowth": "Želim da pratim rast i da me aplikacija podseća da unosim mere deteta",
+    "settingsEnterDevelopment": "Želim da beležim razvojne događaje i da me aplikacija podseća da unosim podatke",
+    "settingsEnterDoctorVisits": "Želim da evidentiram posete doktoru i da me aplikacija podseća da unosim podatke",
+    "settingsButtonExport": "Izvezite sve sačuvane podatke",
+    "settingsButtonDeleteAllData": "Obrišite nalog i izbrišite sve podatke"
 }

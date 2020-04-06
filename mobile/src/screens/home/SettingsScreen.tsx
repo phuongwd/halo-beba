@@ -5,8 +5,10 @@ import { NavigationStackProp, NavigationStackState, NavigationStackOptions } fro
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { translate } from '../../translations/translate';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { Switch, Caption } from 'react-native-paper';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
+import { RoundedButton, RoundedButtonType } from '../../components/RoundedButton';
 
 export interface SettingsScreenParams {
     searchTerm?: string;
@@ -16,12 +18,21 @@ export interface Props {
     navigation: NavigationStackProp<NavigationStackState, SettingsScreenParams>;
 }
 
-export class SettingsScreen extends React.Component<Props, object> {
+export interface State {
+    notificationsApp: boolean;
+    notificationsEmail: boolean;
+    followGrowth: boolean;
+    followDevelopment: boolean;
+    followDoctorVisits: boolean;
+}
+
+export class SettingsScreen extends React.Component<Props, State> {
 
     public constructor(props:Props) {
         super(props);
 
         this.setDefaultScreenParams();
+        this.initState();
     }
 
     private setDefaultScreenParams() {
@@ -34,6 +45,18 @@ export class SettingsScreen extends React.Component<Props, object> {
         } else {
             this.props.navigation.state.params = defaultScreenParams;
         }
+    }
+
+    private initState() {
+        let state: State = {
+            notificationsApp: true,
+            notificationsEmail: false,
+            followGrowth: true,
+            followDevelopment: true,
+            followDoctorVisits: true,
+        };
+
+        this.state = state;
     }
 
     private gotoBack() {
@@ -58,9 +81,122 @@ export class SettingsScreen extends React.Component<Props, object> {
 
                         {/* TITLE */}
                         <Typography type={TypographyType.headingSecondary}>
-                            {/* { translate('searchResults') } */}
-                            Obavestenja
+                            { translate('settingsTitleNotifications') }
                         </Typography>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+
+                        {/* state.notificationsApp */}
+                        <View style={{alignSelf:'stretch', flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                            <Switch
+                                value={ this.state.notificationsApp }
+                                color={ themeContext.theme.variables?.colors?.switchColor }
+                                onValueChange={ () => {this.setState({notificationsApp:!this.state.notificationsApp})} }
+                                style={{marginRight:scale(20)}}
+                            />
+                            <Typography style={{flex:1}} type={ TypographyType.bodyRegular }>
+                                {translate('settingsNotificationsWithApp')}
+                            </Typography>
+                        </View>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* state.notificationsEmail */}
+                        <View style={{alignSelf:'stretch', flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                            <Switch
+                                value={ this.state.notificationsEmail }
+                                color={ themeContext.theme.variables?.colors?.switchColor }
+                                onValueChange={ () => {this.setState({notificationsEmail:!this.state.notificationsEmail})} }
+                                style={{marginRight:scale(20)}}
+                            />
+                            <Typography style={{flex:1}} type={ TypographyType.bodyRegular }>
+                                {translate('settingsNotificationsWithEmail')}
+                            </Typography>
+                        </View>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* Notifications help */}
+                        <Caption style={{fontSize:moderateScale(14)}}>
+                            { translate('settingsNotificationsHelp') }
+                        </Caption>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* TITLE */}
+                        <Typography type={TypographyType.headingSecondary}>
+                            { translate('settingsTitleNotificationsDetails') }
+                        </Typography>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+
+                        {/* state.followGrowth */}
+                        <View style={{alignSelf:'stretch', flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                            <Switch
+                                value={ this.state.followGrowth }
+                                color={ themeContext.theme.variables?.colors?.switchColor }
+                                onValueChange={ () => {this.setState({followGrowth:!this.state.followGrowth})} }
+                                style={{marginRight:scale(20)}}
+                            />
+                            <Typography style={{flex:1}} type={ TypographyType.bodyRegular }>
+                                {translate('settingsEnterGrowth')}
+                            </Typography>
+                        </View>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* state.followDevelopment */}
+                        <View style={{alignSelf:'stretch', flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                            <Switch
+                                value={ this.state.followDevelopment }
+                                color={ themeContext.theme.variables?.colors?.switchColor }
+                                onValueChange={ () => {this.setState({followDevelopment:!this.state.followDevelopment})} }
+                                style={{marginRight:scale(20)}}
+                            />
+                            <Typography style={{flex:1}} type={ TypographyType.bodyRegular }>
+                                {translate('settingsEnterDevelopment')}
+                            </Typography>
+                        </View>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* state.followDoctorVisits */}
+                        <View style={{alignSelf:'stretch', flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                            <Switch
+                                value={ this.state.followDoctorVisits }
+                                color={ themeContext.theme.variables?.colors?.switchColor }
+                                onValueChange={ () => {this.setState({followDoctorVisits:!this.state.followDoctorVisits})} }
+                                style={{marginRight:scale(20)}}
+                            />
+                            <Typography style={{flex:1}} type={ TypographyType.bodyRegular }>
+                                {translate('settingsEnterDoctorVisits')}
+                            </Typography>
+                        </View>
+
+                        <View style={{height:scale(50)}} />
+
+                        {/* Export all data */}
+                        <RoundedButton
+                            text = {translate('settingsButtonExport')}
+                            type = { RoundedButtonType.hollowPurple }
+                            onPress={() => {}}
+                            style={{width:'85%', alignSelf:'center'}}
+                        />
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* Delete account */}
+                        <TextButton
+                            style={{padding:0, alignSelf:'center'}}
+                            iconStyle={{color:'#AA40BF'}}
+                            textStyle={{fontSize:scale(16)}}
+                            color={TextButtonColor.purple}
+                            onPress={ () => {} }
+                        >
+                            {translate('settingsButtonDeleteAllData')}
+                        </TextButton>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
                     </View>
                 </ScrollView>
             )}
@@ -76,6 +212,6 @@ export interface SettingsScreenStyles {
 
 const styles = StyleSheet.create<SettingsScreenStyles>({
     container: {
-        flex: 1,
+        
     },
 });
