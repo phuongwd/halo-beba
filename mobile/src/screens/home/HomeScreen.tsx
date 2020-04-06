@@ -51,6 +51,7 @@ export class HomeScreen extends React.Component<Props, object> {
                 <ScrollView style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}} contentContainerStyle={ [styles.container, {padding:themeContext.theme.screenContainer?.padding}] }>
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_SearchResultsScreen')}}>Search results</Button>
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_FaqScreenScreen')}}>FAQ</Button>
+                    <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_AboutScreen')}}>About US</Button>
                     <View style={{height:scale(30)}} />
 
                     <ArticlesSection />
