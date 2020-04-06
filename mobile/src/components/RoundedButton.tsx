@@ -169,20 +169,20 @@ const styles = StyleSheet.create<RoundedButtonStyles>({
         flex: 1,
         fontFamily: 'SFUIDisplay-Regular',
         color: '#0D1F4A',
-        fontSize: 17,
-        lineHeight: 20,
+        fontSize: moderateScale(17),
+        lineHeight: moderateScale(20),
     },
 
     iconStyle: {
-        fontSize: 20,
+        fontSize: moderateScale(20),
         color: '#0D1F4A',
-        marginLeft: 16,
-        marginRight: 16,
+        marginLeft: scale(16),
+        marginRight: scale(16),
     },
 
     arrowIcon: {
-        fontSize: 20,
+        fontSize: moderateScale(20),
         color: '#0D1F4A',
-        marginLeft: 16,
+        marginLeft: scale(16),
     },
 });
