@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, StyleSheet, ViewStyle, LayoutChangeEvent } from 'react-native';
+import { SafeAreaView, View, StyleSheet, ViewStyle, LayoutChangeEvent, StatusBar } from 'react-native';
 import { NavigationStackProp, NavigationStackState } from 'react-navigation-stack';
 import { ThemeContextValue, ThemeConsumer } from '../themes/ThemeContext';
 import { IconButton, Colors, ActivityIndicator } from 'react-native-paper';
@@ -130,7 +130,10 @@ export class VideoScreen extends React.Component<Props, State> {
         return (
             <ThemeConsumer>
                 {(themeContext: ThemeContextValue) => (
-                    <SafeAreaView style={[styles.container, themeContext.theme.contentContainer]}>
+                    <View style={[styles.container, themeContext.theme.contentContainer]}>
+                        {/* STATUS BAR */}
+                        <StatusBar hidden={true} />
+
                         <View onLayout={this.onContainerLayout} style={{ backgroundColor: 'black', flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                             {this.state.playerWidth && this.state.playerHeight && this.state.aspectRatio ? (
                                 <YoutubePlayer
@@ -163,7 +166,7 @@ export class VideoScreen extends React.Component<Props, State> {
                                 style={{ position: 'absolute', top: scale(0), right: scale(0) }}
                             />
                         </View>
-                    </SafeAreaView>
+                    </View>
                 )}
             </ThemeConsumer>
         );
