@@ -132,7 +132,7 @@ export class VideoScreen extends React.Component<Props, State> {
                 {(themeContext: ThemeContextValue) => (
                     <View style={[styles.container, themeContext.theme.contentContainer]}>
                         {/* STATUS BAR */}
-                        <StatusBar hidden={true} />
+                        <StatusBar hidden={true} animated={true} />
 
                         <View onLayout={this.onContainerLayout} style={{ backgroundColor: 'black', flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                             {this.state.playerWidth && this.state.playerHeight && this.state.aspectRatio ? (
