@@ -28,6 +28,7 @@ import { FaqCategoryScreen } from "../screens/home/FaqCategoryScreen";
 import { AboutScreen } from "../screens/AboutScreen";
 import { SettingsScreen } from "../screens/home/SettingsScreen";
 import { AppFeedbackScreen } from "../screens/home/AppFeedbackScreen";
+import { VideoScreen } from "../screens/VideoScreen";
 
 /**
  * Use it to [navigate screens](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
@@ -330,6 +331,12 @@ const RootModalStackNavigator = createStackNavigator({
             title: "Title"
         }
     },
+    RootModalStackNavigator_VideoScreen: {
+        screen: VideoScreen,
+        navigationOptions: {
+            title: "Video"
+        }
+    },
     DrawerNavigator: {
         screen: DrawerNavigator
     }
@@ -337,7 +344,7 @@ const RootModalStackNavigator = createStackNavigator({
         navigationOptions: {
             headerBackTitle: null
         },
-        mode: "card",
+        mode: "modal",
         headerMode: "none",
         initialRouteName: "DrawerNavigator"
     });
