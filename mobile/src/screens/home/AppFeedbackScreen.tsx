@@ -80,7 +80,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                         { translate('appFeedbackQuestion1') }
                     </Typography>
 
-                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={{backgroundColor:'white'}}></RoundedTextArea>
+                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={ styles.textArea }></RoundedTextArea>
 
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
@@ -89,7 +89,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                         { translate('appFeedbackQuestion2') }
                     </Typography>
 
-                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={{backgroundColor:'white'}}></RoundedTextArea>
+                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={ styles.textArea }></RoundedTextArea>
 
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
@@ -98,7 +98,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                         { translate('appFeedbackQuestion3') }
                     </Typography>
 
-                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={{backgroundColor:'white'}}></RoundedTextArea>
+                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={ styles.textArea }></RoundedTextArea>
 
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
@@ -107,7 +107,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                         { translate('appFeedbackQuestion4') }
                     </Typography>
 
-                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={{backgroundColor:'white'}}></RoundedTextArea>
+                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={ styles.textArea }></RoundedTextArea>
 
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
@@ -116,7 +116,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                         { translate('appFeedbackQuestion5') }
                     </Typography>
 
-                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={{backgroundColor:'white'}}></RoundedTextArea>
+                    <RoundedTextArea placeholder={ translate('fieldLabelComment') } style={ styles.textArea }></RoundedTextArea>
 
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
@@ -138,10 +138,19 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
 
 export interface AppFeedbackScreenStyles {
     container?: ViewStyle;
+    textArea?: ViewStyle;
 }
 
 const styles = StyleSheet.create<AppFeedbackScreenStyles>({
     container: {
         
+    },
+
+    textArea: {
+        backgroundColor: 'white',
+        shadowColor: 'black',
+        shadowOffset: {width:2, height:2},
+        shadowOpacity: 0.2,
+        elevation: 2,
     },
 });
