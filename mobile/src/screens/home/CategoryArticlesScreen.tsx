@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle, ScrollView, Image, ImageStyle } from 'react-native';
+import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle, ScrollView, Image, ImageStyle, ImageBackground } from 'react-native';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { translate } from '../../translations/translate';
@@ -10,6 +10,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { CategoryArticlesViewEntity } from '../../stores/CategoryArticlesViewEntity';
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export interface CategoryArticlesScreenParams {
     data: CategoryArticlesViewEntity;
@@ -47,17 +48,41 @@ export class CategoryArticlesScreen extends React.Component<Props, object> {
     }
 
     private gotoArticleScreen(article?:ArticleViewEntity) {
-        if (article) {
+        if (!article) return;
+
+        if (!article.youTubeVideoId) {
+            // Text article
             let params: ArticleScreenParams = {
                 article: article
             };
             
             this.props.navigation.navigate('HomeStackNavigator_ArticleScreen', params);
+        } else {
+            // Video article
+            this.props.navigation.navigate('RootModalStackNavigator_VideoScreen', {
+                videoId: article?.youTubeVideoId
+            });
         }
     }
 
     public render() {
         const screenParams = this.props.navigation.state.params!;
+
+        let getPlayIcon = (themeContext: ThemeContextValue, size:number = scale(70)) => {
+            return (
+                <View style={{
+                    justifyContent:'center', alignItems:'center',
+                    backgroundColor:'rgba(255,255,255,0.4)',
+                    width:size, height:size,
+                    borderRadius: themeContext.percentageToDP('20%')
+                }}>
+                    <Icon
+                        name={ "play" }
+                        style={{ color:'white', marginLeft:size/10, fontSize:size/2 }}
+                    />
+                </View>
+            );
+        }
 
         return (
             <ThemeConsumer>
@@ -78,11 +103,13 @@ export class CategoryArticlesScreen extends React.Component<Props, object> {
                     {/* CATEGORY ARTICLES */}
                     { screenParams.data.articles.map((article, index) => (
                         <TouchableOpacity onPress={() => {this.gotoArticleScreen(article)}} key={index} style={{marginBottom:scale(25)}}>
-                            <Image
-                                source={ {uri:article?.coverImageUrl} }
-                                style={[styles.image, {width:'100%', aspectRatio:1.8}]}
+                            <ImageBackground
+                                source={{ uri: article.coverImageUrl }}
+                                style={[styles.image, { width: '100%', aspectRatio: 1.8 }]}
                                 resizeMode="cover"
-                            />
+                            >
+                                {article.youTubeVideoId ? getPlayIcon(themeContext) : null}
+                            </ImageBackground>
 
                             <Typography style={{marginTop:scale(10), marginBottom:0}} type={TypographyType.headingSecondary}>
                                 {article.title}
@@ -108,6 +135,9 @@ const styles = StyleSheet.create<CategoryArticlesScreenStyles>({
     },
 
     image: {
-        borderRadius: scale(10)
+        borderRadius: scale(10),
+        justifyContent: 'center',
+        alignItems:'center',
+        overflow: 'hidden',
     }
 });

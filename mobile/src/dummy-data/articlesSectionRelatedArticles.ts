@@ -6,6 +6,7 @@ const articlesList1 = [
         title: 'Kada dete počinje sa komunikacijom',
         coverImageUrl: 'https://i.pinimg.com/originals/0a/91/19/0a9119e202ffa8618cbac18c2a323e43.jpg',
         coverImageLocalPath: '',
+        youTubeVideoId: 'Wzrw7WTBVuk',
         bodyHTML: `<p>Amet <b>aliquip</b> nisi ex et proident et proident laborum. Occaecat eu sint esse dolore sunt adipisicing ut proident ad. Amet laborum qui consequat sit magna amet ullamco enim ex ut pariatur in nostrud eu. Eu nulla ipsum nostrud reprehenderit tempor eiusmod. Nulla fugiat consequat adipisicing occaecat consectetur aliquip adipisicing ut irure ea. Exercitation in adipisicing duis adipisicing deserunt commodo enim nostrud incididunt irure do deserunt.</p>
                     <p>Adipisicing exercitation ea tempor Lorem cupidatat ad commodo excepteur dolor. Consequat irure exercitation voluptate deserunt tempor quis in id sunt fugiat magna. Excepteur consequat incididunt duis aliqua eiusmod.</p>
         `,

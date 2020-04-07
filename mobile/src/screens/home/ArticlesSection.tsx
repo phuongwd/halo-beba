@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { View, Text, StyleProp, StyleSheet, ViewStyle, TextStyle, ImageStyle, Image, ScrollView } from 'react-native';
+import { View, Text, StyleProp, StyleSheet, ViewStyle, TextStyle, ImageStyle, Image, ScrollView, ImageBackground } from 'react-native';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { ArticleViewEntity } from '../../stores/ArticleViewEntity';
 import { CategoryArticlesViewEntity } from '../../stores/CategoryArticlesViewEntity';
@@ -13,6 +13,7 @@ import { navigation } from '../../app/Navigators';
 import { ArticleScreenParams } from './ArticleScreen';
 import { BorderlessButton, RectButton, TouchableHighlight, TouchableNativeFeedback, TouchableOpacity } from "react-native-gesture-handler";
 import { StackActions } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export interface Props {
     data: ArticlesSectionData;
@@ -62,14 +63,11 @@ export class ArticlesSection extends React.Component<Props, State> {
         navigation.navigate('HomeStackNavigator_CategoryArticlesScreen', params);
     }
 
-    private gotoArticleScreen(article?: ArticleViewEntity) {
-        if (article) {
-            // let params: ArticleScreenParams = {
-            //     article: article
-            // };
-
-            // navigation.navigate('HomeStackNavigator_ArticleScreen', params);
-
+    private onArticlePress(article?: ArticleViewEntity) {
+        if (!article) return;
+        
+        if (!article.youTubeVideoId) {
+            // Text article
             const pushAction = StackActions.push({
                 routeName: 'HomeStackNavigator_ArticleScreen',
                 params: {
@@ -78,10 +76,31 @@ export class ArticlesSection extends React.Component<Props, State> {
             });
 
             navigation.dispatch(pushAction);
+        } else {
+            // Video article
+            navigation.navigate('RootModalStackNavigator_VideoScreen', {
+                videoId: article?.youTubeVideoId
+            });
         }
     }
 
     public render() {
+        let getPlayIcon = (themeContext: ThemeContextValue, size:number = scale(70)) => {
+            return (
+                <View style={{
+                    justifyContent:'center', alignItems:'center',
+                    backgroundColor:'rgba(255,255,255,0.4)',
+                    width:size, height:size,
+                    borderRadius: themeContext.percentageToDP('20%')
+                }}>
+                    <Icon
+                        name={ "play" }
+                        style={{ color:'white', marginLeft:size/10, fontSize:size/2 }}
+                    />
+                </View>
+            );
+        }
+
         return (
             <ThemeConsumer>
                 {(themeContext: ThemeContextValue) => (
@@ -103,14 +122,16 @@ export class ArticlesSection extends React.Component<Props, State> {
                             <View style={{ marginBottom: scale(20) }}>
                                 {this.props?.data?.featuredArticle ? (
                                     <TouchableOpacity
-                                        onPress={() => { this.gotoArticleScreen(this.props?.data?.featuredArticle) }}
+                                        onPress={() => { this.onArticlePress(this.props?.data?.featuredArticle) }}
                                     >
                                         {/* Featured image */}
-                                        <Image
+                                        <ImageBackground
                                             source={{ uri: this.props?.data?.featuredArticle?.coverImageUrl }}
                                             style={[styles.image, { width: '100%', aspectRatio: 1.7 }]}
                                             resizeMode="cover"
-                                        />
+                                        >
+                                            {this.props?.data?.featuredArticle.youTubeVideoId ? getPlayIcon(themeContext) : null}
+                                        </ImageBackground>
 
                                         <View style={{ height: scale(10) }} />
 
@@ -125,12 +146,14 @@ export class ArticlesSection extends React.Component<Props, State> {
                                 {this.props?.data?.otherFeaturedArticles && this.props?.data?.otherFeaturedArticles.length > 0 ? (
                                     <ScrollView horizontal={true}>
                                         {this.props?.data?.otherFeaturedArticles.map((article, index) => (
-                                            <TouchableOpacity key={index} onPress={() => { this.gotoArticleScreen(article) }} style={{ width: scale(180), marginRight: scale(15), marginBottom: scale(10) }}>
-                                                <Image
-                                                    source={{ uri: article?.coverImageUrl }}
+                                            <TouchableOpacity key={index} onPress={() => { this.onArticlePress(article) }} style={{ width: scale(180), marginRight: scale(15), marginBottom: scale(10) }}>
+                                                <ImageBackground
+                                                    source={{ uri: article.coverImageUrl }}
                                                     style={[styles.image, { width: '100%', aspectRatio: 1 }]}
                                                     resizeMode="cover"
-                                                />
+                                                >
+                                                    {article.youTubeVideoId ? getPlayIcon(themeContext, scale(60)) : null}
+                                                </ImageBackground>
 
                                                 <View style={{ height: scale(10) }} />
 
@@ -165,12 +188,14 @@ export class ArticlesSection extends React.Component<Props, State> {
                                         {category?.articles && category?.articles.length > 0 ? (
                                             <ScrollView horizontal={true}>
                                                 {category?.articles.map((article, index) => (
-                                                    <TouchableOpacity onPress={() => { this.gotoArticleScreen(article) }} key={index} style={{ width: scale(180), marginRight: scale(15), marginBottom: scale(15) }}>
-                                                        <Image
-                                                            source={{ uri: article?.coverImageUrl }}
+                                                    <TouchableOpacity onPress={() => { this.onArticlePress(article) }} key={index} style={{ width: scale(180), marginRight: scale(15), marginBottom: scale(15) }}>
+                                                        <ImageBackground
+                                                            source={{ uri: article.coverImageUrl }}
                                                             style={[styles.image, { width: '100%', aspectRatio: 1 }]}
                                                             resizeMode="cover"
-                                                        />
+                                                        >
+                                                            {article.youTubeVideoId ? getPlayIcon(themeContext, scale(60)) : null}
+                                                        </ImageBackground>
 
                                                         <View style={{ height: scale(10) }} />
 
@@ -217,6 +242,9 @@ const styles = StyleSheet.create<ArticlesSectionStyles>({
     },
 
     image: {
-        borderRadius: scale(10)
+        borderRadius: scale(10),
+        justifyContent: 'center',
+        alignItems:'center',
+        overflow: 'hidden',
     }
 });
