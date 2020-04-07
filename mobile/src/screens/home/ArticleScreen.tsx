@@ -13,6 +13,9 @@ import { Divider } from '../../components/Divider';
 import { ArticlesSection } from './ArticlesSection';
 import AutoHeightWebView from 'react-native-autoheight-webview'
 import { articlesSectionRelatedArticles } from "../../dummy-data/articlesSectionRelatedArticles";
+import { Dimensions, Linking } from 'react-native';
+// @ts-ignore
+import HTML from 'react-native-render-html';
 
 export interface ArticleScreenParams {
     article: ArticleViewEntity
@@ -92,7 +95,7 @@ export class ArticleScreen extends React.Component<Props, object> {
 
                     <View style={{flexDirection:'column', justifyContent:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
                         {/* ARTICLE BODY */}
-                        <AutoHeightWebView
+                        {/* <AutoHeightWebView
                             source={{ html:screenParams.article.bodyHTML}}
                             style={{width: '100%'}}
                             customStyle={ `p {font-size:20px}` }
@@ -100,6 +103,17 @@ export class ArticleScreen extends React.Component<Props, object> {
                             scrollEnabled={false}
                             viewportContent={'width=device-width, user-scalable=no'}
                             // onSizeUpdated={ size => console.warn(size.height) }
+                        /> */}
+
+                        <HTML
+                            html={ screenParams.article.bodyHTML }
+                            baseFontStyle={ { fontSize:scale(17) } }
+                            tagsStyles={ {p:{marginBottom:15}, a:{fontWeight:'bold', textDecorationLine:'none'}} }
+                            imagesMaxWidth={ Dimensions.get('window').width }
+                            staticContentMaxWidth={ Dimensions.get('window').width }
+                            onLinkPress={(event:any, href:string) => {
+                                Linking.openURL(href);
+                            }}
                         />
 
                         {/* SHARE BUTTON */}

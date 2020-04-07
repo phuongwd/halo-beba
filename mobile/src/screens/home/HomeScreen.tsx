@@ -54,10 +54,12 @@ export class HomeScreen extends React.Component<Props, object> {
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_AboutScreen')}}>About US</Button>
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_SettingsScreen')}}>Settings</Button>
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_AppFeedbackScreen')}}>Give app feedback</Button>
+                    
                     {/* Wzrw7WTBVuk, nHoMIuf7fWk, YwJA04-zpvQ,  */}
-                    <Button onPress={() => {this.props.navigation.navigate('RootModalStackNavigator_VideoScreen', {
+                    {/* <Button onPress={() => {this.props.navigation.navigate('RootModalStackNavigator_VideoScreen', {
                         videoId:'Wzrw7WTBVuk'
-                    })}}>Video</Button>
+                    })}}>Video</Button> */}
+
                     <View style={{height:scale(30)}} />
 
                     <ArticlesSection />
