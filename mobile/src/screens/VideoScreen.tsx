@@ -62,10 +62,10 @@ export class VideoScreen extends React.Component<Props, State> {
                 {(themeContext: ThemeContextValue) => (
                     <SafeAreaView style={[styles.container, themeContext.theme.contentContainer]}>
                         <View style={{ backgroundColor: 'blue', flex: 1, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
-                            <WebView
+                            {/* <WebView
                                 source={{ html: this.getHtml() }}
                                 style={{ flex: 1, alignSelf: 'stretch', borderColor: 'green', borderWidth: 10 }}
-                            />
+                            /> */}
 
                             <IconButton
                                 icon="close"
