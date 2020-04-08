@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleProp, ViewStyle, StyleSheet , Text} from 'react-native';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Typography } from './Typography';
 
 export interface Props {
     label?: string;
@@ -62,7 +63,9 @@ export class RoundedTextInput extends React.Component<Props> {
                     />
                     {this.props.suffix ? (
                         <View style={ styles.suffixContainer }>
-                            <Text>{this.props.suffix}</Text>
+                            <Typography>
+                                {this.props.suffix}
+                            </Typography>
                         </View>
                     ) : null}
                 </View>

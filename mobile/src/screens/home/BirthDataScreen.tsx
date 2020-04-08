@@ -4,8 +4,13 @@ import { NavigationStackProp, NavigationStackState, NavigationStackOptions } fro
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { translate } from '../../translations/translate';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
+import { DateTimePicker, DateTimePickerType } from '../../components/DateTimePicker';
+import { RateAChild } from '../../components/RateAChild';
+import { RoundedTextInput } from '../../components/RoundedTextInput';
+import { RoundedTextArea } from '../../components/RoundedTextArea';
 
 export interface BirthDataScreenParams {
 
@@ -49,8 +54,9 @@ export class BirthDataScreen extends React.Component<Props, State> {
         return (
             <ThemeConsumer>
             {(themeContext:ThemeContextValue) => (
-                <ScrollView
-                    style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
+                <KeyboardAwareScrollView
+                    // themeContext.theme.screenContainer?.backgroundColor
+                    style={{backgroundColor:'white'}}
                     contentContainerStyle={ [styles.container] }
                 >
                     <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
@@ -63,11 +69,76 @@ export class BirthDataScreen extends React.Component<Props, State> {
 
                         {/* TITLE */}
                         <Typography type={TypographyType.headingPrimary}>
-                            {/* { translate('searchResults') } */}
-                            Birth data
+                            { translate('birthDataTitle') }
                         </Typography>
+
+                        {/* DESCRIPTION TEXT */}
+                        <Typography type={ TypographyType.bodyRegular }>
+                            { translate('birthDataDescription') }
+                        </Typography>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* PLANNED TERM */}
+                        <DateTimePicker
+                            label={translate('fieldLabelPlannedTerm')} type={ DateTimePickerType.date }
+                            style={{alignSelf:'stretch'}}
+                            onChange={ () => {} }
+                        />
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+
+                        {/* BIRTH DATE */}
+                        <DateTimePicker
+                            label={translate('fieldLabelBirthDate')} type={ DateTimePickerType.date }
+                            style={{alignSelf:'stretch'}}
+                            onChange={ () => {} }
+                        />
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* BABY RATING ON BIRTH */}
+                        <Typography type={ TypographyType.bodyRegular } style={{marginBottom:scale(5)}}>
+                            {translate('fieldLabelBabyRatingOnBirth')}
+                        </Typography>
+
+                        <RateAChild />
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* BABY MEASUREMENTS */}
+                        <Typography type={ TypographyType.bodyRegular } style={{marginBottom:scale(8)}}>
+                            {translate('fieldLabelMeasurementsOnBirth')}
+                        </Typography>
+
+                        <RoundedTextInput
+                            label={ translate('fieldLabelWeight') }
+                            suffix="g"
+                            icon="weight"
+                            style={{width:scale(150)}}
+                            onChange={ () => {} }
+                        />
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+
+                        <RoundedTextInput
+                            label={ translate('fieldLabelLength') }
+                            suffix="cm"
+                            icon="weight"
+                            style={{width:scale(150)}}
+                            onChange={ () => {} }
+                        />
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* DOCTOR COMMENTS */}
+                        <RoundedTextArea
+                            label={translate('fieldLabelCommentFromDoctor')} onChange={ () => {} }
+                            style={{alignSelf:'stretch'}}
+                        />
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
                     </View>
-                </ScrollView>
+                </KeyboardAwareScrollView>
             )}
             </ThemeConsumer>
         );
@@ -81,6 +152,6 @@ export interface BirthDataScreenStyles {
 
 const styles = StyleSheet.create<BirthDataScreenStyles>({
     container: {
-        flex: 1,
+        
     },
 });

@@ -87,5 +87,15 @@
     "appFeedbackQuestion3": "Imate li pitanja na koja niste pronašli odgovor?",
     "appFeedbackQuestion4": "Kada biste mogli da promenite jednu stvar u aplikaciji, šta bi to bilo?",
     "appFeedbackQuestion5": "Kako biste ocenili sveukupno iskustvo korišćenja aplikacije?",
-    "appFeedbackButtonSend": "Pošaljite odgovore"
+    "appFeedbackButtonSend": "Pošaljite odgovore",
+
+    "birthDataTitle": "Bebino rodjenje",
+    "birthDataDescription": "Sve podatke koristimo da bismo precizno izračunali razvojne prekretnice i prikazali relevantne informacije za razvoj Vaše bebe.",
+    "fieldLabelPlannedTerm": "Planirani termin rodjenja",
+    "fieldLabelBirthDate": "Datum rodjenja",
+    "fieldLabelBabyRatingOnBirth": "Ocena deteta na rodjenju",
+    "fieldLabelMeasurementsOnBirth": "Mere deteta na rodjenju",
+    "fieldLabelWeight": "Težina",
+    "fieldLabelLength": "Dužina",
+    "fieldLabelCommentFromDoctor": "Komentar ili primedba doktora"
 }
