@@ -31,6 +31,7 @@ import { AppFeedbackScreen } from "../screens/home/AppFeedbackScreen";
 import { VideoScreen } from "../screens/VideoScreen";
 import { BirthDataScreen } from "../screens/home/BirthDataScreen";
 import { ExaminationReminderScreen } from "../screens/home/ExaminationReminderScreen";
+import { ChildProfileScreen } from "../screens/home/ChildProfileScreen";
 
 /**
  * Use it to [navigate screens](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
@@ -164,6 +165,12 @@ const HomeStackNavigator = createStackNavigator({
         screen: ExaminationReminderScreen,
         navigationOptions: {
             title: "Exam reminder"
+        }
+    },
+    HomeStackNavigator_ChildProfileScreen: {
+        screen: ChildProfileScreen,
+        navigationOptions: {
+            title: "Child profile"
         }
     },
 }, {

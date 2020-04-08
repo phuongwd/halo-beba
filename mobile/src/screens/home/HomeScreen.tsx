@@ -56,6 +56,7 @@ export class HomeScreen extends React.Component<Props, object> {
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_AppFeedbackScreen')}}>Give app feedback</Button>
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_BirthDataScreen')}}>Birth data</Button>
                     <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_ExaminationReminderScreen')}}>Exam reminder</Button>
+                    <Button onPress={() => {this.props.navigation.navigate('HomeStackNavigator_ChildProfileScreen')}}>Child profile</Button>
                     
                     {/* Wzrw7WTBVuk, nHoMIuf7fWk, YwJA04-zpvQ,  */}
                     {/* <Button onPress={() => {this.props.navigation.navigate('RootModalStackNavigator_VideoScreen', {
