@@ -29,6 +29,7 @@ import { AboutScreen } from "../screens/AboutScreen";
 import { SettingsScreen } from "../screens/home/SettingsScreen";
 import { AppFeedbackScreen } from "../screens/home/AppFeedbackScreen";
 import { VideoScreen } from "../screens/VideoScreen";
+import { BirthDataScreen } from "../screens/home/BirthDataScreen";
 
 /**
  * Use it to [navigate screens](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
@@ -150,6 +151,12 @@ const HomeStackNavigator = createStackNavigator({
         screen: AppFeedbackScreen,
         navigationOptions: {
             title: "App feedback"
+        }
+    },
+    HomeStackNavigator_BirthDataScreen: {
+        screen: BirthDataScreen,
+        navigationOptions: {
+            title: "Birth data"
         }
     },
 }, {

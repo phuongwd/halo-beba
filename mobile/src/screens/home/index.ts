@@ -1,6 +1,7 @@
 import { AppFeedbackScreen } from "./AppFeedbackScreen";
 import { ArticleScreen } from "./ArticleScreen";
 import { ArticlesSection } from "./ArticlesSection";
+import { BirthDataScreen } from "./BirthDataScreen";
 import { CategoryArticlesScreen } from "./CategoryArticlesScreen";
 import { DidntFindAnswers } from "./DidntFindAnswers";
 import { FaqCategoryScreen } from "./FaqCategoryScreen";
@@ -21,3 +22,4 @@ export { FaqCategoryScreen };
 export { DidntFindAnswers };
 export { SettingsScreen };
 export { AppFeedbackScreen };
+export { BirthDataScreen };
