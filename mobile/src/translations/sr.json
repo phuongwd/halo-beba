@@ -97,5 +97,12 @@
     "fieldLabelMeasurementsOnBirth": "Mere deteta na rodjenju",
     "fieldLabelWeight": "Težina",
     "fieldLabelLength": "Dužina",
-    "fieldLabelCommentFromDoctor": "Komentar ili primedba doktora"
+    "fieldLabelCommentFromDoctor": "Komentar ili primedba doktora",
+    "buttonSaveData": "Sačuvajte podatke",
+
+    "examReminderTitle": "Podsetnik za pregled",
+    "examReminderDescription": "Upišite datum i vreme zakazanog pregleda i HaloBeba će Vas podsetiti.",
+    "examReminderDate": "Datum",
+    "examReminderTime": "Vreme",
+    "buttonAddExamReminder": "Dodajte podsetnik za pregled"
 }

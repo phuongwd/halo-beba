@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, Button, StyleSheet, ViewStyle } from 'react-native';
 import { NavigationStackProp, NavigationStackState, NavigationStackOptions } from 'react-navigation-stack';
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { translate } from '../../translations/translate';
@@ -8,24 +8,22 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { DateTimePicker, DateTimePickerType } from '../../components/DateTimePicker';
-import { RateAChild } from '../../components/RateAChild';
-import { RoundedTextInput } from '../../components/RoundedTextInput';
-import { RoundedTextArea } from '../../components/RoundedTextArea';
 import { RoundedButton, RoundedButtonType } from '../../components/RoundedButton';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export interface BirthDataScreenParams {
+export interface ExaminationReminderScreenParams {
 
 }
 
 export interface Props {
-    navigation: NavigationStackProp<NavigationStackState, BirthDataScreenParams>;
+    navigation: NavigationStackProp<NavigationStackState, ExaminationReminderScreenParams>;
 }
 
 export interface State {
 
 }
 
-export class BirthDataScreen extends React.Component<Props, State> {
+export class ExaminationReminderScreen extends React.Component<Props, State> {
 
     public constructor(props:Props) {
         super(props);
@@ -34,7 +32,7 @@ export class BirthDataScreen extends React.Component<Props, State> {
     }
 
     private setDefaultScreenParams() {
-        let defaultScreenParams: BirthDataScreenParams = {
+        let defaultScreenParams: ExaminationReminderScreenParams = {
             
         };
 
@@ -70,78 +68,43 @@ export class BirthDataScreen extends React.Component<Props, State> {
 
                         {/* TITLE */}
                         <Typography type={TypographyType.headingPrimary}>
-                            { translate('birthDataTitle') }
+                            { translate('examReminderTitle') }
                         </Typography>
 
-                        {/* DESCRIPTION TEXT */}
-                        <Typography type={ TypographyType.bodyRegular }>
-                            { translate('birthDataDescription') }
-                        </Typography>
+                        {/* DESCRIPTION */}
+                        <View style={{flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                            <Icon
+                                name={ "clock-outline" }
+                                style={{ fontSize:scale(24), color:"#2BABEE", marginRight:scale(12) }}
+                            />
+                            <Typography type={TypographyType.bodyRegular} style={{flex:1}}>
+                                {translate('examReminderDescription')}
+                            </Typography>
+                        </View>
 
                         <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
-                        {/* PLANNED TERM */}
+                        {/* DATE */}
                         <DateTimePicker
-                            label={translate('fieldLabelPlannedTerm')} type={ DateTimePickerType.date }
+                            label={translate('examReminderDate')} type={ DateTimePickerType.date }
                             style={{alignSelf:'stretch'}}
                             onChange={ () => {} }
                         />
 
                         <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
-                        {/* BIRTH DATE */}
+                        {/* TIME */}
                         <DateTimePicker
-                            label={translate('fieldLabelBirthDate')} type={ DateTimePickerType.date }
+                            label={translate('examReminderTime')} type={ DateTimePickerType.time }
                             style={{alignSelf:'stretch'}}
                             onChange={ () => {} }
-                        />
-
-                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
-
-                        {/* BABY RATING ON BIRTH */}
-                        <Typography type={ TypographyType.bodyRegular } style={{marginBottom:scale(5)}}>
-                            {translate('fieldLabelBabyRatingOnBirth')}
-                        </Typography>
-
-                        <RateAChild />
-                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
-
-                        {/* BABY MEASUREMENTS */}
-                        <Typography type={ TypographyType.bodyRegular } style={{marginBottom:scale(8)}}>
-                            {translate('fieldLabelMeasurementsOnBirth')}
-                        </Typography>
-
-                        <RoundedTextInput
-                            label={ translate('fieldLabelWeight') }
-                            suffix="g"
-                            icon="weight"
-                            style={{width:scale(150)}}
-                            onChange={ () => {} }
-                        />
-
-                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
-
-                        <RoundedTextInput
-                            label={ translate('fieldLabelLength') }
-                            suffix="cm"
-                            icon="weight"
-                            style={{width:scale(150)}}
-                            onChange={ () => {} }
-                        />
-
-                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
-
-                        {/* DOCTOR COMMENTS */}
-                        <RoundedTextArea
-                            label={translate('fieldLabelCommentFromDoctor')} onChange={ () => {} }
-                            style={{alignSelf:'stretch'}}
                         />
 
                         <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                         {/* SUBMIT BUTTON */}
                         <RoundedButton
-                            text = {translate('buttonSaveData')}
+                            text = {translate('buttonAddExamReminder')}
                             type = { RoundedButtonType.purple }
                             onPress={() => {}}
                         />
@@ -156,12 +119,12 @@ export class BirthDataScreen extends React.Component<Props, State> {
 
 }
 
-export interface BirthDataScreenStyles {
+export interface ExaminationReminderScreenStyles {
     container?: ViewStyle;
 }
 
-const styles = StyleSheet.create<BirthDataScreenStyles>({
+const styles = StyleSheet.create<ExaminationReminderScreenStyles>({
     container: {
-        
+        flex: 1,
     },
 });
