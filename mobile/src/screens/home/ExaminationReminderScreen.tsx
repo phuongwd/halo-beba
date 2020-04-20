@@ -59,17 +59,6 @@ export class ExaminationReminderScreen extends React.Component<Props, State> {
                     contentContainerStyle={ [styles.container] }
                 >
                     <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
-                        {/* GO BACK */}
-                        <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
-                            {translate('buttonBack')}
-                        </TextButton>
-
-                        <View style={{height:scale(15)}} />
-
-                        {/* TITLE */}
-                        <Typography type={TypographyType.headingPrimary}>
-                            { translate('examReminderTitle') }
-                        </Typography>
 
                         {/* DESCRIPTION */}
                         <View style={{flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>

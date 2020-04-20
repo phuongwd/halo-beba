@@ -53,15 +53,9 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
             <ThemeConsumer>
             {(themeContext:ThemeContextValue) => (
                 <KeyboardAwareScrollView
-                    style={{backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
+                    style={{backgroundColor:'white'}}
                     contentContainerStyle={ [styles.container, {alignItems:'stretch', padding:themeContext.theme.screenContainer?.padding}] }
                 >
-                    {/* GO BACK */}
-                    <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
-                        {translate('buttonBack')}
-                    </TextButton>
-
-                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     {/* TITLE */}
                     <Typography type={TypographyType.headingPrimary}>
@@ -147,10 +141,10 @@ const styles = StyleSheet.create<AppFeedbackScreenStyles>({
     },
 
     textArea: {
-        backgroundColor: 'white',
-        shadowColor: 'black',
-        shadowOffset: {width:2, height:2},
-        shadowOpacity: 0.2,
-        elevation: 2,
+        backgroundColor: '#F3F3F3',
+        // shadowColor: 'black',
+        // shadowOffset: {width:2, height:2},
+        // shadowOpacity: 0.2,
+        // elevation: 2,
     },
 });

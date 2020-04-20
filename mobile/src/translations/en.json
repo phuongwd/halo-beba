@@ -70,6 +70,7 @@
     "callUs": "Pozovite naše savetovalište",
     "aboutUs": "O nama",
 
+    "settingsTitle": "Podešavanja",
     "settingsTitleNotifications": "Obaveštenja",
     "settingsNotificationsWithApp": "Želim da dobijam obaveštenja putem aplikacije",
     "settingsNotificationsWithEmail": "Želim da dobijam obaveštenja putem Email-a",
@@ -82,6 +83,7 @@
     "settingsButtonDeleteAllData": "Obrišite nalog i izbrišite sve podatke",
     "settingsLogout": "Odjavite se iz aplikacije",
 
+    "appFeedbackHeaderTitle": "Unapredjenje aplikacije",
     "appFeedbackTitle": "Hvala Vam što učestvujete!",
     "appFeedbackSubTitle": "Poboljšajte aplikaciju: Sve komentare koje ostavite uzećemo u razmatranje, jer bebe to zaslužuju!",
     "appFeedbackQuestion1": "Zbog čega danas koristite aplikaciju?",

@@ -68,16 +68,10 @@ export class SettingsScreen extends React.Component<Props, State> {
             <ThemeConsumer>
                 {(themeContext: ThemeContextValue) => (
                     <ScrollView
-                        style={{ backgroundColor: themeContext.theme.screenContainer?.backgroundColor }}
+                        style={{ backgroundColor: 'white' }}
                         contentContainerStyle={[styles.container]}
                     >
                         <View style={{ alignItems: 'flex-start', padding: themeContext.theme.screenContainer?.padding }}>
-                            {/* GO BACK */}
-                            <TextButton style={{ padding: 0 }} icon="chevron-left" iconStyle={{ color: '#AA40BF' }} textStyle={{ fontSize: scale(16) }} color={TextButtonColor.purple} onPress={() => { this.gotoBack() }}>
-                                {translate('buttonBack')}
-                            </TextButton>
-
-                            <View style={{ height: themeContext.theme.variables?.sizes.verticalPaddingNormal }} />
 
                             {/* TITLE */}
                             <Typography type={TypographyType.headingSecondary}>

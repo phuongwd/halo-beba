@@ -94,6 +94,27 @@ class Navigation {
 
 export const navigation = Navigation.getInstance();
 
+const secondaryHomeNavigationOptions = {
+    headerBackImage: function() {
+        return (
+            <Icon
+                name={"chevron-left"}
+                style={{ paddingLeft: 5, fontSize: 34, color: themes.getCurrentTheme().theme.variables ?.colors ?.headerBackButton }}
+            />
+        );
+    },
+    headerBackTitleVisible: false,
+    headerLeft: undefined,
+    headerTitle: undefined,
+    headerStyle: {
+        backgroundColor: themes.getCurrentTheme().theme.variables ?.colors ?.headerBackground,
+    },
+    headerTitleStyle: {
+        color: themes.getCurrentTheme().theme.variables ?.colors ?.headerTitle
+    },
+    headerRight: undefined,
+};
+
 const HomeStackNavigator = createStackNavigator({
     HomeStackNavigator_HomeScreen: {
         screen: HomeScreen,
@@ -145,32 +166,47 @@ const HomeStackNavigator = createStackNavigator({
     },
     HomeStackNavigator_SettingsScreen: {
         screen: SettingsScreen,
-        navigationOptions: {
-            title: "Settings"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: translate('settingsTitle'),
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
     HomeStackNavigator_AppFeedbackScreen: {
         screen: AppFeedbackScreen,
-        navigationOptions: {
-            title: "App feedback"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: translate('appFeedbackHeaderTitle'),
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
     HomeStackNavigator_BirthDataScreen: {
         screen: BirthDataScreen,
-        navigationOptions: {
-            title: "Birth data"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: translate('birthDataTitle'),
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
     HomeStackNavigator_ExaminationReminderScreen: {
         screen: ExaminationReminderScreen,
-        navigationOptions: {
-            title: "Exam reminder"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: translate('examReminderTitle'),
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
     HomeStackNavigator_ChildProfileScreen: {
         screen: ChildProfileScreen,
-        navigationOptions: {
-            title: "Child profile"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: "Child profile",
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
 }, {
