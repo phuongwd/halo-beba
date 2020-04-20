@@ -143,6 +143,7 @@ export class VideoScreen extends React.Component<Props, State> {
                                     play={true}
                                     // volume={50}
                                     // webViewStyle={{borderWidth:3, borderColor:'red'}}
+                                    // @ts-ignore
                                     webViewProps={{ allowsFullscreenVideo: false }}
                                     initialPlayerParams={{
                                         preventFullScreen: true,

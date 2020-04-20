@@ -318,6 +318,7 @@ const DrawerNavigator = createDrawerNavigator({
         screen: DrawerSwitchNavigator
     }
 }, {
+        // @ts-ignore
         drawerWidth: "100%",
         contentComponent: function(props) {
             return (
