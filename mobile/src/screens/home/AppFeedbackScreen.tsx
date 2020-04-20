@@ -70,7 +70,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* QUESTION 1 */}
-                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), marginBottom:scale(10)}}>
+                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), lineHeight:moderateScale(22), marginBottom:scale(10)}}>
                         { translate('appFeedbackQuestion1') }
                     </Typography>
 
@@ -79,7 +79,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* QUESTION 2 */}
-                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), marginBottom:scale(10)}}>
+                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), lineHeight:moderateScale(22), marginBottom:scale(10)}}>
                         { translate('appFeedbackQuestion2') }
                     </Typography>
 
@@ -88,7 +88,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* QUESTION 3 */}
-                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), marginBottom:scale(10)}}>
+                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), lineHeight:moderateScale(22), marginBottom:scale(10)}}>
                         { translate('appFeedbackQuestion3') }
                     </Typography>
 
@@ -97,7 +97,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* QUESTION 4 */}
-                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), marginBottom:scale(10)}}>
+                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), lineHeight:moderateScale(22), marginBottom:scale(10)}}>
                         { translate('appFeedbackQuestion4') }
                     </Typography>
 
@@ -106,7 +106,7 @@ export class AppFeedbackScreen extends React.Component<Props, State> {
                     <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
 
                     {/* QUESTION 5 */}
-                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), marginBottom:scale(10)}}>
+                    <Typography type={TypographyType.bodyRegular} style={{fontWeight:'bold', fontSize:moderateScale(20), lineHeight:moderateScale(22), marginBottom:scale(10)}}>
                         { translate('appFeedbackQuestion5') }
                     </Typography>
 
