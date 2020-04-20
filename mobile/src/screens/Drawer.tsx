@@ -5,7 +5,7 @@ import { translate } from '../translations/translate';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { navigation } from '../app/Navigators';
-import { FancyButton, FancyButtonType } from "../components/FancyButton";
+import { FancyButton, FancyButtonType, FancyButtonIconPosition } from "../components/FancyButton";
 import { Typography, TypographyType } from "../components/Typography";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { HomeScreenParams } from './home/HomeScreen';
@@ -105,6 +105,9 @@ export class Drawer extends React.Component<Props> {
                         <FancyButton title={translate('drawerButtonAboutUs')} style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.aboutUs)} } />
                         <FancyButton title={translate('drawerButtonContact')} style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.contact)} } />
                     </View>
+
+                    {/* Settings */}
+                    <FancyButton type={ FancyButtonType.settings } iconPosition={FancyButtonIconPosition.left} style={{flex:1}} onPress={ ()=>{this.gotoScreen(FancyButtonType.settings)} } />
                 </ScrollView>
             )}
             </ThemeConsumer>

@@ -9,6 +9,7 @@ import { RectButton } from "react-native-gesture-handler";
 export interface Props {
     title?: string;
     type?: FancyButtonType;
+    iconPosition?: FancyButtonIconPosition;
     style?: StyleProp<ViewStyle>;
     textStyle?: StyleProp<TextStyle>;
     onPress?: Function;
@@ -17,6 +18,7 @@ export interface Props {
 export interface State {
     text?: string,
     iconComponent?: JSX.Element,
+    iconPosition?: FancyButtonIconPosition;
     containerStyle: ViewStyle;
     textStyle: TextStyle;
 }
@@ -35,7 +37,13 @@ export enum FancyButtonType {
     faq,
 
     aboutUs,
-    contact
+    contact,
+    settings,
+}
+
+export enum FancyButtonIconPosition {
+    top,
+    left,
 }
 
 export class FancyButton extends React.Component<Props, State> {
@@ -48,6 +56,7 @@ export class FancyButton extends React.Component<Props, State> {
         let state: State = {
             text: '',
             iconComponent: undefined,
+            iconPosition: this.props.iconPosition ? this.props.iconPosition : FancyButtonIconPosition.top,
 
             containerStyle: {
                 backgroundColor: '#FBF1FD',
@@ -189,6 +198,16 @@ export class FancyButton extends React.Component<Props, State> {
             state.containerStyle.paddingBottom = 15;
         }
 
+        if (this.props.type === FancyButtonType.settings) {
+            state.text = translate('drawerButtonSettings');
+            state.iconComponent = (
+                <IconFontAwesome5
+                    name={ 'cog' }
+                    style={ {fontSize:24, lineHeight:24, color:'#AA40BF', marginBottom:0, marginRight:13} }
+                />
+            );
+        }
+
         if (state.iconComponent) {
             state.containerStyle.paddingTop = 15;
         }
@@ -208,7 +227,7 @@ export class FancyButton extends React.Component<Props, State> {
                 style={ [styles.container, this.state.containerStyle, this.props.style] }
                 onPress={ () => {this.onPress()} }
             >
-                <View style={{justifyContent: 'center',alignItems: 'center',}}>
+                <View style={{flexDirection:(this.state.iconPosition === FancyButtonIconPosition.top ? 'column' : 'row'), justifyContent: 'center',alignItems: 'center',}}>
                     {this.state.iconComponent}
                     <Text style={ [this.state.textStyle, this.props.textStyle] }>{ this.props.title ? this.props.title : this.state.text }</Text>
                 </View>
