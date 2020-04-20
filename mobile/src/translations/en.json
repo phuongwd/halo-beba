@@ -79,6 +79,7 @@
     "settingsEnterDoctorVisits": "Želim da evidentiram posete doktoru i da me aplikacija podseća da unosim podatke",
     "settingsButtonExport": "Izvezite sve sačuvane podatke",
     "settingsButtonDeleteAllData": "Obrišite nalog i izbrišite sve podatke",
+    "settingsLogout": "Odjavite se iz aplikacije",
 
     "appFeedbackTitle": "Hvala Vam što učestvujete!",
     "appFeedbackSubTitle": "Poboljšajte aplikaciju: Sve komentare koje ostavite uzećemo u razmatranje, jer bebe to zaslužuju!",
