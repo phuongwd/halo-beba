@@ -342,7 +342,7 @@ const AccountStackNavigator = createStackNavigator({
             },
             headerTitleStyle: {
                 color: themes.getCurrentTheme().theme.variables ?.colors ?.headerTitle
-                                                                    }
+            }
         }
     }
 }, {
