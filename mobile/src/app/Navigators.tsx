@@ -154,14 +154,20 @@ const HomeStackNavigator = createStackNavigator({
     },
     HomeStackNavigator_AboutScreen: {
         screen: AboutScreen,
-        navigationOptions: {
-            title: "About"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: translate('aboutUs').toUpperCase(),
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
     HomeStackNavigator_TermsScreen: {
         screen: TermsScreen,
-        navigationOptions: {
-            title: "Terms"
+        navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
+            return {
+                title: translate('termsAndConditionsTitle'),
+                ...secondaryHomeNavigationOptions
+            }
         }
     },
     HomeStackNavigator_SettingsScreen: {

@@ -70,20 +70,14 @@ export class AboutScreen extends React.Component<Props, object> {
             <ThemeConsumer>
             {(themeContext:ThemeContextValue) => (
                 <ScrollView
-                    style={{flex:1, backgroundColor:themeContext.theme.screenContainer?.backgroundColor}}
+                    style={{flex:1, backgroundColor:'white'}}
                     contentContainerStyle={ [styles.container, {padding:themeContext.theme.screenContainer?.padding}] }
                 >
-                    {/* GO BACK */}
-                    <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
-                        {translate('buttonBack')}
-                    </TextButton>
-
-                    <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
 
                     {/* TITLE */}
-                    <Typography type={TypographyType.headingPrimary}>
+                    {/* <Typography type={TypographyType.headingPrimary}>
                         { translate('aboutUs') }
-                    </Typography>
+                    </Typography> */}
 
                     <Typography type={ TypographyType.bodyRegularLargeSpacing }>
                         Halobeba je odsek Centra za promociju zdravlja Gradskog zavoda za javno zdravlje u Beogradu i predstavlja segment rada Kancelarije za zdravu porodicu Ministarstva zdravlja Republike Srbije.

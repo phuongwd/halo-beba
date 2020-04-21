@@ -82,11 +82,11 @@ export class TermsScreen extends React.Component<Props, State> {
                 <StatusBar barStyle="dark-content" />
                 <View style={ styles.innerContainer }>
                     {/* GO BACK */}
-                    <TextButton style={{marginLeft:scale(15), padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
+                    {/* <TextButton style={{marginLeft:scale(15), padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
                         {translate('buttonBack')}
                     </TextButton>
 
-                    <View style={{height:scale(15)}} />
+                    <View style={{height:scale(15)}} /> */}
 
                     <Typography type={ TypographyType.headingPrimary } style={{textAlign:'center'}}>
                         Uslovi korišćenja aplikacije
