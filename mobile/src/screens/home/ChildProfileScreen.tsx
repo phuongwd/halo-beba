@@ -4,7 +4,7 @@ import { NavigationStackProp, NavigationStackState, NavigationStackOptions } fro
 import { ThemeContextValue, ThemeConsumer } from '../../themes/ThemeContext';
 import { translate } from '../../translations/translate';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView as ScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Typography, TypographyType } from '../../components/Typography';
 import { TextButton, TextButtonColor } from '../../components/TextButton';
 import { DateTimePicker, DateTimePickerType } from '../../components/DateTimePicker';
@@ -12,6 +12,7 @@ import { RateAChild } from '../../components/RateAChild';
 import { RoundedTextInput } from '../../components/RoundedTextInput';
 import { RoundedTextArea } from '../../components/RoundedTextArea';
 import { RoundedButton, RoundedButtonType } from '../../components/RoundedButton';
+import FastImage from 'react-native-fast-image';
 
 export interface ChildProfileScreenParams {
 
@@ -27,7 +28,7 @@ export interface State {
 
 export class ChildProfileScreen extends React.Component<Props, State> {
 
-    public constructor(props:Props) {
+    public constructor(props: Props) {
         super(props);
 
         this.setDefaultScreenParams();
@@ -35,7 +36,7 @@ export class ChildProfileScreen extends React.Component<Props, State> {
 
     private setDefaultScreenParams() {
         let defaultScreenParams: ChildProfileScreenParams = {
-            
+
         };
 
         if (this.props.navigation.state.params) {
@@ -54,40 +55,44 @@ export class ChildProfileScreen extends React.Component<Props, State> {
 
         return (
             <ThemeConsumer>
-            {(themeContext:ThemeContextValue) => (
-                <KeyboardAwareScrollView
-                    // themeContext.theme.screenContainer?.backgroundColor
-                    style={{backgroundColor:'white'}}
-                    contentContainerStyle={ [styles.container] }
-                >
-                    <View style={{alignItems:'flex-start', padding:themeContext.theme.screenContainer?.padding}}>
-                        {/* GO BACK */}
-                        <TextButton style={{padding:0}} icon="chevron-left" iconStyle={{color:'#AA40BF'}} textStyle={{fontSize:scale(16)}} color={TextButtonColor.purple} onPress={ () => {this.gotoBack()} }>
-                            {translate('buttonBack')}
-                        </TextButton>
+                {(themeContext: ThemeContextValue) => (
+                    <ScrollView
+                        style={[styles.container]}
+                        contentContainerStyle={{ alignItems: 'center', padding: themeContext.theme.screenContainer?.padding }}
+                    >
+                        <View style={{ height: scale(40) }} />
 
-                        <View style={{height:scale(15)}} />
+                        {/* PHOTO */}
+                        <FastImage
+                            style={styles.photo}
+                            source={{
+                                uri: 'https://i.ytimg.com/vi/F9wbogYwTVM/maxresdefault.jpg',
+                                priority: FastImage.priority.normal,
+                            }}
+                            resizeMode={FastImage.resizeMode.cover}
+                        />
 
-                        {/* TITLE */}
-                        <Typography type={TypographyType.headingPrimary}>
-                            {/* { translate('birthDataTitle') } */}
-                            Child profile
-                        </Typography>
-                    </View>
-                </KeyboardAwareScrollView>
-            )}
+                    </ScrollView>
+                )}
             </ThemeConsumer>
         );
     }
-
 }
 
 export interface ChildProfileScreenStyles {
     container?: ViewStyle;
+    photo?: ViewStyle;
 }
 
 const styles = StyleSheet.create<ChildProfileScreenStyles>({
     container: {
         flex: 1,
+        backgroundColor: 'white',
+    },
+
+    photo: {
+        width: scale(120),
+        height: scale(120),
+        borderRadius: scale(60),
     },
 });
