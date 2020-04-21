@@ -210,7 +210,7 @@ const HomeStackNavigator = createStackNavigator({
         screen: ChildProfileScreen,
         navigationOptions: ({ navigation }: NavigationScreenConfigProps<NavigationStackProp<NavigationStackState, any>>): NavigationStackOptions => {
             return {
-                title: "Child profile",
+                title: translate('childProfileTitle'),
                 ...secondaryHomeNavigationOptions
             }
         }

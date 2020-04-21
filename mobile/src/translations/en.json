@@ -109,5 +109,10 @@
     "examReminderDescription": "Upišite datum i vreme zakazanog pregleda i HaloBeba će Vas podsetiti.",
     "examReminderDate": "Datum",
     "examReminderTime": "Vreme",
-    "buttonAddExamReminder": "Dodajte podsetnik za pregled"
+    "buttonAddExamReminder": "Dodajte podsetnik za pregled",
+
+    "childProfileTitle": "Profil deteta",
+    "childProfileBirthday": "Rodjendan",
+    "childProfileChange": "Izmenite profil",
+    "childProfileAddSibling": "Dodajte sestru ili brata"
 }

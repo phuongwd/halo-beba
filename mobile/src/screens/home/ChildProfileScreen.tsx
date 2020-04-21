@@ -72,6 +72,32 @@ export class ChildProfileScreen extends React.Component<Props, State> {
                             resizeMode={FastImage.resizeMode.cover}
                         />
 
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+
+                        {/* NAME */}
+                        <Typography type={TypographyType.headingPrimary} style={{marginBottom:scale(5)}}>
+                            Gvozden
+                        </Typography>
+
+                        {/* BIRTH DATE */}
+                        <Typography type={TypographyType.bodyRegular} style={{fontSize:moderateScale(15), color:'grey'}}>
+                            { translate('childProfileBirthday') } 10.02.2019.
+                        </Typography>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingNormal}} />
+
+                        {/* EDIT PROFILE */}
+                        <TextButton color={TextButtonColor.purple} onPress={ () => {} }>
+                            { translate('childProfileChange') }
+                        </TextButton>
+
+                        <View style={{height:themeContext.theme.variables?.sizes.verticalPaddingLarge}} />
+
+                        {/* ADD SIBLING */}
+                        <TextButton color={TextButtonColor.purple} onPress={ () => {} }>
+                            + { translate('childProfileAddSibling') }
+                        </TextButton>
+
                     </ScrollView>
                 )}
             </ThemeConsumer>
