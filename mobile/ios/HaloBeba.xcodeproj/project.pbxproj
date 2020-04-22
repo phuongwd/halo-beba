@@ -749,7 +749,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.byteout.halobeba;
+				PRODUCT_BUNDLE_IDENTIFIER = com.halobeba;
 				PRODUCT_NAME = HaloBeba;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -770,7 +770,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.byteout.halobeba;
+				PRODUCT_BUNDLE_IDENTIFIER = com.halobeba;
 				PRODUCT_NAME = HaloBeba;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
