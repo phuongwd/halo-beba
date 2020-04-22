@@ -1,4 +1,4 @@
-package com.byteout.halobeba;
+package com.halobeba;
 
 import android.app.Application;
 import android.content.Context;

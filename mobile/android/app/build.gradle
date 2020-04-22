@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.byteout.halobeba"
+        applicationId "com.halobeba"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

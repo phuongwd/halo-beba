@@ -1,4 +1,4 @@
-package com.byteout.halobeba;
+package com.halobeba;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
