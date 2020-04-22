@@ -1,4 +1,4 @@
-package com.halobeba;
+package com.halo.beba;
 
 import android.app.Application;
 import android.content.Context;
