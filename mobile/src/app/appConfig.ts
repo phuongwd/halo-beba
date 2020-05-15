@@ -9,5 +9,6 @@ export const appConfig = {
     apiUrl: apiUrlDevelop,
 
     // DEVELOPMENT
+    showLog: true,
     deleteRealmFilesBeforeOpen: false,
 };
