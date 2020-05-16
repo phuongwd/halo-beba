@@ -8,6 +8,7 @@ export const appConfig = {
     // API
     apiUrl: apiUrlDevelop,
     apiTimeout: 15000,
+    apiNumberOfItems: 10,
 
     // DEVELOPMENT
     showLog: true,
