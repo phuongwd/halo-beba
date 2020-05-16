@@ -7,6 +7,7 @@ export const appConfig = {
 
     // API
     apiUrl: apiUrlDevelop,
+    apiTimeout: 15000,
 
     // DEVELOPMENT
     showLog: true,
