@@ -11,7 +11,7 @@ export const appConfig = {
     apiUsername: 'access_content',
     apiPassword: 'xALRY5Gf2Kn80ZUMHEbd',
     apiTimeout: 15000,
-    apiNumberOfItems: 10,
+    apiNumberOfItems: 50,
     showPublishedContent: 0,
 
     // DEVELOPMENT
