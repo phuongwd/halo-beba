@@ -10,6 +10,8 @@ export const appConfig = {
     apiUrl: apiUrlProduction,
     apiUsername: 'access_content',
     apiPassword: 'xALRY5Gf2Kn80ZUMHEbd',
+    apiAuthUsername: 'administer_users',
+    apiAuthPassword: '2AbSyuXrGCe97pBaedCE',
     apiTimeout: 15000,
     apiNumberOfItems: 10,
     showPublishedContent: 0,
