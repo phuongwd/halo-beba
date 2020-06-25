@@ -13,10 +13,12 @@ export const appConfig = {
     apiAuthUsername: 'administer_users',
     apiAuthPassword: '2AbSyuXrGCe97pBaedCE',
     apiTimeout: 15000,
-    apiNumberOfItems: 10,
+    apiNumberOfItems: 50,
     showPublishedContent: 0,
 
     // DEVELOPMENT
-    showLog: true,
+    // Set to true only during development
+    showLog: true, 
+    preventSync: false,
     deleteRealmFilesBeforeOpen: false,
 };
