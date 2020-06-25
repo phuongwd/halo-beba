@@ -17,6 +17,8 @@ export const appConfig = {
     showPublishedContent: 0,
 
     // DEVELOPMENT
-    showLog: true,
+    // Set to true only during development
+    showLog: true, 
+    preventSync: false,
     deleteRealmFilesBeforeOpen: false,
 };
