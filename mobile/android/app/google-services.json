@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:586568775926:android:a128e3230ef14a863cd4d7",
+        "mobilesdk_app_id": "1:586568775926:android:2ed17c83452e77f23cd4d7",
         "android_client_info": {
-          "package_name": "com.halo.beba"
+          "package_name": "org.unicef.ecar.parentbuddy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "586568775926-kp8kdpslmanfnff1937cv36khh211f8d.apps.googleusercontent.com",
+          "client_id": "586568775926-5j99htudod071m3l2fnndn45qq9p2pat.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.halo.beba",
+            "package_name": "org.unicef.ecar.parentbuddy",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
@@ -38,6 +38,13 @@
             {
               "client_id": "586568775926-14mfvnd527c0vept39vsa1f2g6rtuaq8.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "586568775926-cf07165rfn3uvu9h5n119el61qab76gv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.halobeba"
+              }
             }
           ]
         }
