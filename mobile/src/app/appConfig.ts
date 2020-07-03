@@ -14,7 +14,7 @@ export const appConfig = {
     apiAuthPassword: '2AbSyuXrGCe97pBaedCE',
     apiTimeout: 15000,
     apiNumberOfItems: 50,
-    showPublishedContent: 0,
+    showPublishedContent: 1,
 
     // DEVELOPMENT
     // Set to true only during development
