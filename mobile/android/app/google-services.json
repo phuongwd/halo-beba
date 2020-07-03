@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "586568775926-vlmv0b95m5mpo3jri4abk62bbp12ri2e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.unicef.ecar.parentbuddy",
+            "certificate_hash": "5855440843aad14610ad7650345ce6a65e42577c"
+          }
+        },
+        {
           "client_id": "586568775926-5j99htudod071m3l2fnndn45qq9p2pat.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
