@@ -16,9 +16,12 @@ export const appConfig = {
     apiNumberOfItems: 50,
     showPublishedContent: 1,
 
+    // BACKUP
+    backupFileName: 'halo-beba.backup',
+
     // DEVELOPMENT
     // Set to true only during development
-    showLog: false, 
-    preventSync: false,
+    showLog: true, 
+    preventSync: true,
     deleteRealmFilesBeforeOpen: false,
 };
