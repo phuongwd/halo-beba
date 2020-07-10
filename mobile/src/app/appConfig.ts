@@ -15,8 +15,8 @@ export const appConfig = {
     apiTimeout: 15000,
     apiNumberOfItems: 50,
     showPublishedContent: 1,
-    downloadImagesBatchSize: 20,
-    downloadImagesIntervalBetweenBatches: 3000, // In milliseconds
+    downloadImagesBatchSize: 20, // Works for 20
+    downloadImagesIntervalBetweenBatches: 3000, // In milliseconds. Works for 3000
 
     // DEVELOPMENT
     // Set to true only during development
