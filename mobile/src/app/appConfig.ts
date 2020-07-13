@@ -17,7 +17,7 @@ export const appConfig = {
     showPublishedContent: 1,
 
     // BACKUP
-    backupGDriveFolder: 'ParentBuddy',
+    backupGDriveFolderName: 'ParentBuddy',
     backupGDriveFileName: 'my.backup',
 
     // DEVELOPMENT
