@@ -17,7 +17,8 @@ export const appConfig = {
     showPublishedContent: 1,
 
     // BACKUP
-    backupFileName: 'halo-beba.backup',
+    backupGDriveFolder: 'ParentBuddy',
+    backupGDriveFileName: 'my.backup',
 
     // DEVELOPMENT
     // Set to true only during development
