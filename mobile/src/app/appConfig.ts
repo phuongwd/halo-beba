@@ -18,9 +18,13 @@ export const appConfig = {
     downloadImagesBatchSize: 20, // Works for 20
     downloadImagesIntervalBetweenBatches: 3000, // In milliseconds. Works for 3000
 
+    // BACKUP
+    backupGDriveFolderName: 'ParentBuddy',
+    backupGDriveFileName: 'my.backup',
+
     // DEVELOPMENT
     // Set to true only during development
-    showLog: true, 
-    preventSync: true,
+    showLog: false, 
+    preventSync: false,
     deleteRealmFilesBeforeOpen: false,
 };
